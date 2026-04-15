@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import copy
 import json
-import math
 import re
 from dataclasses import dataclass
 from datetime import datetime
@@ -272,6 +270,21 @@ def compare_prices(current: ParsedPdf, previous: ParsedPdf | None) -> dict:
         "previous_file": previous.pdf_path.name,
         "current_file": current.pdf_path.name,
     }
+
+
+def build_price_history(parsed_pdfs: list[ParsedPdf]) -> list[dict]:
+    history = []
+    for parsed in sorted(parsed_pdfs, key=lambda item: parse_uploaded_datetime(item.pdf_path)):
+        history.append(
+            {
+                "date": parsed.uploaded_label,
+                "effective_date": parsed.sandwich["effective_date"],
+                "label": parsed.uploaded_label,
+                "sandwich": parsed.sandwich,
+                "source_file": parsed.pdf_path.name,
+            }
+        )
+    return history
 
 
 def build_price_rows(rows: list[dict], hidden_fix: bool) -> str:
@@ -739,8 +752,6 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
     const dateRadios = document.querySelectorAll('input[name="price-date"]');
     const class1Body = document.querySelector("#class1-table tbody");
     const class2Body = document.querySelector("#class2-table tbody");
-    const effectivePill = document.querySelector(".meta .pill strong");
-
     function applySnapshot(index) {{
       const snap = snapshots[index];
       class1Body.innerHTML = snap.class_1_rows;
@@ -770,64 +781,6 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
 """
 
 
-def apply_discount(prices: list[str], discount_percent: float) -> list[str]:
-    """Применяет скидку к списку цен. Возвращает новый список строк."""
-    result = []
-    for p in prices:
-        if p == "-":
-            result.append("-")
-        else:
-            val = parse_currency_value(p)
-            discounted = val * (1 - discount_percent / 100)
-            result.append(format_number(discounted))
-    return result
-
-
-def generate_test_price_history(sandwich: dict) -> list[dict]:
-    """Генерирует тестовую историю цен для демонстрации."""
-    current_effective = sandwich.get("effective_date", "14 августа 2025г.")
-
-    history = []
-
-    # Snapshot 1: 01.01.2025, цены на 15% ниже
-    snapshot_jan = copy.deepcopy(sandwich)
-    snapshot_jan["effective_date"] = "01 января 2025г."
-    for section in ("class_1", "class_2"):
-        for product in snapshot_jan["products"][section]:
-            product["prices"] = apply_discount(product["prices"], 15)
-    history.append({
-        "date": "01.01.2025",
-        "effective_date": "01 января 2025г.",
-        "label": "01.01.2025",
-        "sandwich": snapshot_jan,
-    })
-
-    # Snapshot 2: 01.03.2025, цены на 8% ниже
-    snapshot_mar = copy.deepcopy(sandwich)
-    snapshot_mar["effective_date"] = "01 марта 2025г."
-    for section in ("class_1", "class_2"):
-        for product in snapshot_mar["products"][section]:
-            product["prices"] = apply_discount(product["prices"], 8)
-    history.append({
-        "date": "01.03.2025",
-        "effective_date": "01 марта 2025г.",
-        "label": "01.03.2025",
-        "sandwich": snapshot_mar,
-    })
-
-    # Snapshot 3: текущий (14 августа 2025)
-    snapshot_current = copy.deepcopy(sandwich)
-    snapshot_current["effective_date"] = current_effective
-    history.append({
-        "date": "14.08.2025",
-        "effective_date": current_effective,
-        "label": "14.08.2025",
-        "sandwich": snapshot_current,
-    })
-
-    return history
-
-
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     SITE_DIR.mkdir(parents=True, exist_ok=True)
@@ -836,9 +789,11 @@ def main() -> None:
     if not pdf_files:
       raise SystemExit("No PDF files found in input/")
 
-    current = parse_pdf(pdf_files[0])
-    previous = parse_pdf(pdf_files[1]) if len(pdf_files) > 1 else None
+    parsed_pdfs = [parse_pdf(path) for path in pdf_files]
+    current = parsed_pdfs[0]
+    previous = parsed_pdfs[1] if len(parsed_pdfs) > 1 else None
     comparison = compare_prices(current, previous)
+    price_history = build_price_history(parsed_pdfs)
 
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
@@ -848,7 +803,7 @@ def main() -> None:
         "sandwich": current.sandwich,
         "colors": current.colors,
         "comparison": comparison,
-        "price_history": generate_test_price_history(current.sandwich),
+        "price_history": price_history,
     }
 
     (DATA_DIR / "sandwich-panels.json").write_text(
