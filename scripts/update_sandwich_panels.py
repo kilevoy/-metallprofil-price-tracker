@@ -108,6 +108,61 @@ def parse_price_tokens(chunk: str) -> list[str]:
     return re.findall(r"-|\d{1,3}(?: \d{3})?(?:,\d+)?", chunk)
 
 
+def find_page_block(doc: fitz.Document, page_terms: list[str], block_term: str) -> str:
+    page_index = find_page_index_by_terms(doc, page_terms)
+    page = doc[page_index]
+    for block in page.get_text("blocks"):
+        text = clean_text(block[4])
+        if block_term in text:
+            return text
+    raise ValueError(f"Block not found: {block_term}")
+
+
+def parse_accessories_prices(doc: fitz.Document) -> dict:
+    # Базовые цены для Полиэстер 25 мкм берем из строки "1 Плоский лист ТУ"
+    poly_block = find_page_block(
+        doc,
+        ["ОСНОВНЫЕ ВИДЫ ПРОДУКЦИИ С ПОЛИМЕРНЫМ ПОКРЫТИЕМ И ОЦИНКОВАННОЙ СТАЛИ", "Плоский лист ТУ"],
+        "1 Плоский лист ТУ",
+    )
+    if "м.кв." not in poly_block:
+        raise ValueError("Unexpected format for polyester flat sheet row")
+    poly_tokens = parse_price_tokens(poly_block.split("м.кв.", 1)[1])
+    if len(poly_tokens) < 2:
+        raise ValueError("Not enough polyester prices in flat sheet row")
+    polyester_05_base = parse_currency_value(poly_tokens[0])
+    polyester_07_base = parse_currency_value(poly_tokens[1])
+
+    # Базовые цены для оцинковки берем из строки "1 Плоский лист **" (прайс №2)
+    zinc_block = find_page_block(
+        doc,
+        ["ОСНОВНЫЕ ВИДЫ ПРОДУКЦИИ ОЦИНКОВАННЫЕ", "Плоский лист **"],
+        "1 Плоский лист **",
+    )
+    zinc_tokens = parse_price_tokens(zinc_block)
+    # Токены строки: [1, 1250, 0,9600, 347,88, 353,76, ...]
+    # База для фасонных изделий ТСП:
+    # 0,45 -> 405,72 ; 0,5 -> 432,00 ; 0,7 -> 579,60
+    if len(zinc_tokens) < 11:
+        raise ValueError("Not enough galvanized prices in flat sheet row")
+    zinc_045_base = parse_currency_value(zinc_tokens[6])
+    zinc_05_base = parse_currency_value(zinc_tokens[8])
+    zinc_07_base = parse_currency_value(zinc_tokens[10])
+
+    return {
+        "Оцинковка": {
+            "0,45": round(zinc_045_base * 1.9, 2),
+            "0,5": round(zinc_05_base * 1.9, 2),
+            "0,7": round(zinc_07_base * 1.9, 2),
+        },
+        "Полиэстер 25 мкм": {
+            "0,45": None,
+            "0,5": round(polyester_05_base * 1.9, 2),
+            "0,7": round(polyester_07_base * 1.9, 2),
+        },
+    }
+
+
 def normalize_price_tokens(values: list[str]) -> list[str]:
     result = []
     for value in values:
@@ -159,11 +214,6 @@ def parse_sandwich_page(doc: fitz.Document) -> dict:
             thickness = block.split("Фасонное изделие для ТСП -", 1)[1].split("(", 1)[0].strip()
             accessories.append({"thickness": thickness, "formula": "Цена плоского листа × 1,9"})
 
-    accessories_prices = {
-        "Оцинковка": {"0,45": 770.87, "0,5": 820.80, "0,7": 1101.24},
-        "Полиэстер 25 мкм": {"0,45": None, "0,5": 1054.50, "0,7": 1396.50},
-    }
-
     return {
         "page_index": page_index + 1,
         "effective_date": effective_date,
@@ -172,7 +222,7 @@ def parse_sandwich_page(doc: fitz.Document) -> dict:
         "thickness_headers": ["50", "60", "80", "100", "120", "150", "170", "200", "250"],
         "products": products,
         "accessories": accessories,
-        "accessories_prices": accessories_prices,
+        "accessories_prices": parse_accessories_prices(doc),
         "minimum_order_panels": "200 м.кв.",
     }
 
