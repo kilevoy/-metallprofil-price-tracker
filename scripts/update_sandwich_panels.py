@@ -670,6 +670,14 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       font-size: 13px;
       text-align: center;
     }}
+    footer a {{
+      color: var(--accent-deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(143, 56, 31, 0.35);
+    }}
+    footer a:hover {{
+      border-bottom-color: rgba(143, 56, 31, 0.75);
+    }}
     @media (max-width: 720px) {{
       .page {{ width: min(100% - 20px, 1180px); margin-top: 12px; }}
       .hero, .section {{ padding: 20px; }}
@@ -793,7 +801,10 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       </div>
     </section>
 
-    <footer>Сгенерировано автоматически из PDF в папке input.</footer>
+    <footer>
+      Сгенерировано автоматически из PDF в папке input.
+      <a href="https://github.com/kilevoy/-metallprofil-price-tracker#readme" target="_blank" rel="noopener noreferrer">README</a>
+    </footer>
   </main>
   <script>
     const snapshots = {snapshots_json};
