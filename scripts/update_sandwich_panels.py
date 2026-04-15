@@ -488,6 +488,14 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       color: var(--text);
     }}
     .pill strong {{ color: var(--accent); }}
+    .pill a {{
+      color: var(--accent-deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(143, 56, 31, 0.35);
+    }}
+    .pill a:hover {{
+      border-bottom-color: rgba(143, 56, 31, 0.75);
+    }}
     .date-picker-section {{
       margin-top: 24px;
       padding: 18px 20px;
@@ -696,6 +704,7 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       <div class="meta">
         <span class="pill"><strong>Действует с:</strong> <span id="effective-date-text">{escape(effective_date)}</span></span>
         <span class="pill"><strong>Последний загруженный прайс-лист:</strong> {escape(latest_file_label)}</span>
+        <span class="pill"><strong>Документация:</strong> <a href="https://github.com/kilevoy/-metallprofil-price-tracker#readme" target="_blank" rel="noopener noreferrer">README</a></span>
       </div>
       <div class="date-picker-section">
         <p class="date-picker-title">Выберите дату для просмотра цен:</p>
