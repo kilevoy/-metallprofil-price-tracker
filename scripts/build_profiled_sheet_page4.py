@@ -257,7 +257,6 @@ def build_html(payload: dict) -> str:
         <table>
           <thead>
             <tr>
-              <th>\u2116</th>
               <th>\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438</th>
               <th>\u0422\u0438\u043f \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f</th>
               <th>\u0422\u043e\u043b\u0449\u0438\u043d\u0430</th>
@@ -344,7 +343,6 @@ def build_html(payload: dict) -> str:
 
       tbody.innerHTML = sorted.map((row) => `
         <tr>
-          <td>${{row.product_row_no}}</td>
           <td>${{row.product_name}}</td>
           <td class="muted">${{row.coating_type}}</td>
           <td>${{row.thickness}}</td>
