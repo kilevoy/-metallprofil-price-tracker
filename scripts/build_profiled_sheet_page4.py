@@ -274,7 +274,6 @@ def build_html(payload: dict) -> str:
     label {{ display: grid; gap: 6px; font-size: 13px; color: var(--muted); }}
     select {{ border: 1px solid var(--line); border-radius: 10px; padding: 10px; font-size: 14px; background: var(--input-bg); color: var(--input-text); }}
     .card {{ margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }}
-    .summary {{ padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 14px; background: var(--accent-soft); }}
     .table-wrap {{ overflow: auto; }}
     table {{ width: 100%; border-collapse: collapse; min-width: 980px; table-layout: fixed; }}
     col.col-product {{ width: 20%; }}
@@ -322,7 +321,6 @@ def build_html(payload: dict) -> str:
     </section>
 
     <section class="card">
-      <div id="summary" class="summary"></div>
       <div class="table-wrap">
         <table>
           <colgroup>
@@ -355,7 +353,6 @@ def build_html(payload: dict) -> str:
     const thicknessFilter = document.getElementById("thickness-filter");
     const showSpecialRows = document.getElementById("show-special-rows");
     const tbody = document.getElementById("tbody");
-    const summary = document.getElementById("summary");
 
     const classes = Array.from(new Set(data.map(r => r.class_name)));
     const allCoatings = Array.from(new Set(data.map(r => r.coating_type)));
@@ -467,7 +464,6 @@ def build_html(payload: dict) -> str:
         </tr>
       `).join("");
 
-      summary.textContent = `\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u0442\u0440\u043e\u043a: ${{sorted.length}}`;
     }}
 
     setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
