@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profiled and flat sheet - page 4</title>
+  <title>Профнастил и плоский лист - страница 4</title>
   <style>
     :root {
       --bg: #f4f3ef;
@@ -43,15 +43,15 @@
 <body>
   <main class="page">
     <section class="hero">
-      <h1>Profiled and flat sheet (page 4)</h1>
+      <h1>Профнастил и плоский лист (страница 4)</h1>
       <div class="meta">
-        Source file: <strong>ПРАЙС 12.04___.pdf</strong><br>
-        Section: <strong>PROFILED AND FLAT SHEET WITH POLYMER COATING</strong><br>
-        Product rows: <strong>20</strong>, additional rows: <strong>3</strong>
+        Источник: <strong>ПРАЙС 12.04___.pdf</strong><br>
+        Раздел: <strong>ПРОФИЛИРОВАННЫЙ И ПЛОСКИЙ ЛИСТ С ПОЛИМЕРНЫМ ПОКРЫТИЕМ</strong><br>
+        Позиции: <strong>20</strong>, строк в блоке "Дополнительно": <strong>3</strong>
       </div>
       <div class="filters">
-        <label>Coating class<select id="class-filter"></select></label>
-        <label>Thickness<select id="thickness-filter"></select></label>
+        <label>Класс покрытия<select id="class-filter"></select></label>
+        <label>Толщина<select id="thickness-filter"></select></label>
       </div>
     </section>
 
@@ -61,11 +61,11 @@
         <table>
           <thead>
             <tr>
-              <th>No</th>
-              <th>Product name</th>
-              <th>Coating type</th>
-              <th>Thickness</th>
-              <th>Price</th>
+              <th>№</th>
+              <th>Наименование продукции</th>
+              <th>Тип покрытия</th>
+              <th>Толщина</th>
+              <th>Цена</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -84,11 +84,20 @@
     const classes = Array.from(new Set(data.map(r => r.class_name)));
     const allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
 
-    function setOptions(select, items, selected) {
+    const classLabels = {
+      STANDARD: "СТАНДАРТ",
+      ECONOM: "ЭКОНОМ",
+      RETAIL: "RETAIL",
+    };
+
+    function setOptions(select, items, selected, labelFn = null) {
       const isAllowed = selected === "all" || items.includes(selected);
       const selectedValue = isAllowed ? selected : "all";
-      const html = ['<option value="all">All</option>']
-        .concat(items.map(item => `<option value="${item}" ${item === selectedValue ? "selected" : ""}>${item}</option>`))
+      const html = ['<option value="all">Все</option>']
+        .concat(items.map(item => {
+          const label = labelFn ? labelFn(item) : item;
+          return `<option value="${item}" ${item === selectedValue ? "selected" : ""}>${label}</option>`;
+        }))
         .join("");
       select.innerHTML = html;
     }
@@ -137,14 +146,14 @@
           <td>${row.product_name}</td>
           <td class="muted">${row.coating_type}</td>
           <td>${row.thickness}</td>
-          <td class="price">${formatPrice(row.price)} RUB/${row.unit}</td>
+          <td class="price">${formatPrice(row.price)} руб./${row.unit}</td>
         </tr>
       `).join("");
 
-      summary.textContent = `Rows found: ${sorted.length}`;
+      summary.textContent = `Найдено строк: ${sorted.length}`;
     }
 
-    setOptions(classFilter, classes, "STANDARD");
+    setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
     setOptions(thicknessFilter, allThicknesses, "all");
     syncThicknessOptions();
     classFilter.addEventListener("change", () => {

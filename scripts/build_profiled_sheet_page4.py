@@ -15,7 +15,7 @@ DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
 
 TARGET_PAGE = 4
-SECTION_TITLE = "PROFILED AND FLAT SHEET WITH POLYMER COATING"
+SECTION_TITLE = "\u041f\u0420\u041e\u0424\u0418\u041b\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u042b\u0419 \u0418 \u041f\u041b\u041e\u0421\u041a\u0418\u0419 \u041b\u0418\u0421\u0422 \u0421 \u041f\u041e\u041b\u0418\u041c\u0415\u0420\u041d\u042b\u041c \u041f\u041e\u041a\u0420\u042b\u0422\u0418\u0415\u041c"
 
 
 @dataclass(frozen=True)
@@ -189,11 +189,11 @@ def build_html(payload: dict) -> str:
     records_json = json.dumps(payload["records"], ensure_ascii=False)
 
     return f"""<!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profiled and flat sheet - page 4</title>
+  <title>\u041f\u0440\u043e\u0444\u043d\u0430\u0441\u0442\u0438\u043b \u0438 \u043f\u043b\u043e\u0441\u043a\u0438\u0439 \u043b\u0438\u0441\u0442 - \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 4</title>
   <style>
     :root {{
       --bg: #f4f3ef;
@@ -233,15 +233,15 @@ def build_html(payload: dict) -> str:
 <body>
   <main class="page">
     <section class="hero">
-      <h1>Profiled and flat sheet (page 4)</h1>
+      <h1>\u041f\u0440\u043e\u0444\u043d\u0430\u0441\u0442\u0438\u043b \u0438 \u043f\u043b\u043e\u0441\u043a\u0438\u0439 \u043b\u0438\u0441\u0442 (\u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 4)</h1>
       <div class="meta">
-        Source file: <strong>{payload["source_file"]}</strong><br>
-        Section: <strong>{payload["section_title"]}</strong><br>
-        Product rows: <strong>{len(payload["rows"])}</strong>, additional rows: <strong>{len(payload["additions"])}</strong>
+        \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: <strong>{payload["source_file"]}</strong><br>
+        \u0420\u0430\u0437\u0434\u0435\u043b: <strong>{payload["section_title"]}</strong><br>
+        \u041f\u043e\u0437\u0438\u0446\u0438\u0438: <strong>{len(payload["rows"])}</strong>, \u0441\u0442\u0440\u043e\u043a \u0432 \u0431\u043b\u043e\u043a\u0435 "\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e": <strong>{len(payload["additions"])}</strong>
       </div>
       <div class="filters">
-        <label>Coating class<select id="class-filter"></select></label>
-        <label>Thickness<select id="thickness-filter"></select></label>
+        <label>\u041a\u043b\u0430\u0441\u0441 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="class-filter"></select></label>
+        <label>\u0422\u043e\u043b\u0449\u0438\u043d\u0430<select id="thickness-filter"></select></label>
       </div>
     </section>
 
@@ -251,11 +251,11 @@ def build_html(payload: dict) -> str:
         <table>
           <thead>
             <tr>
-              <th>No</th>
-              <th>Product name</th>
-              <th>Coating type</th>
-              <th>Thickness</th>
-              <th>Price</th>
+              <th>\u2116</th>
+              <th>\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438</th>
+              <th>\u0422\u0438\u043f \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f</th>
+              <th>\u0422\u043e\u043b\u0449\u0438\u043d\u0430</th>
+              <th>\u0426\u0435\u043d\u0430</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -274,11 +274,20 @@ def build_html(payload: dict) -> str:
     const classes = Array.from(new Set(data.map(r => r.class_name)));
     const allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
 
-    function setOptions(select, items, selected) {{
+    const classLabels = {{
+      STANDARD: "\u0421\u0422\u0410\u041d\u0414\u0410\u0420\u0422",
+      ECONOM: "\u042d\u041a\u041e\u041d\u041e\u041c",
+      RETAIL: "RETAIL",
+    }};
+
+    function setOptions(select, items, selected, labelFn = null) {{
       const isAllowed = selected === "all" || items.includes(selected);
       const selectedValue = isAllowed ? selected : "all";
-      const html = ['<option value="all">All</option>']
-        .concat(items.map(item => `<option value="${{item}}" ${{item === selectedValue ? "selected" : ""}}>${{item}}</option>`))
+      const html = ['<option value="all">\u0412\u0441\u0435</option>']
+        .concat(items.map(item => {{
+          const label = labelFn ? labelFn(item) : item;
+          return `<option value="${{item}}" ${{item === selectedValue ? "selected" : ""}}>${{label}}</option>`;
+        }}))
         .join("");
       select.innerHTML = html;
     }}
@@ -327,14 +336,14 @@ def build_html(payload: dict) -> str:
           <td>${{row.product_name}}</td>
           <td class="muted">${{row.coating_type}}</td>
           <td>${{row.thickness}}</td>
-          <td class="price">${{formatPrice(row.price)}} RUB/${{row.unit}}</td>
+          <td class="price">${{formatPrice(row.price)}} \u0440\u0443\u0431./${{row.unit}}</td>
         </tr>
       `).join("");
 
-      summary.textContent = `Rows found: ${{sorted.length}}`;
+      summary.textContent = `\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u0442\u0440\u043e\u043a: ${{sorted.length}}`;
     }}
 
-    setOptions(classFilter, classes, "STANDARD");
+    setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
     setOptions(thicknessFilter, allThicknesses, "all");
     syncThicknessOptions();
     classFilter.addEventListener("change", () => {{
