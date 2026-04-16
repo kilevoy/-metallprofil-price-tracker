@@ -506,61 +506,6 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid rgba(70, 53, 39, 0.08);
     }}
-    .local-tools {{
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(70, 53, 39, 0.1);
-    }}
-    .local-tools h3 {{
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-family: var(--font-head);
-    }}
-    .local-tools p {{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }}
-    .local-tools-row {{
-      margin-top: 10px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-    }}
-    .local-tools input[type="file"] {{
-      font-size: 13px;
-      max-width: 100%;
-    }}
-    .local-tools button {{
-      border: 0;
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      color: #fff;
-      background: var(--accent);
-    }}
-    .local-tools button.secondary {{
-      background: #7f6b5a;
-    }}
-    .local-tools button:disabled {{
-      opacity: 0.55;
-      cursor: default;
-    }}
-    .local-status {{
-      margin-top: 9px;
-      font-size: 12px;
-      color: var(--muted);
-      min-height: 1.2em;
-    }}
-    .local-status.error {{
-      color: #a12f1d;
-    }}
     .date-picker-title {{
       margin: 0 0 14px;
       font-size: 15px;
@@ -769,16 +714,6 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
         <div class="date-radios" id="date-radios">
           {date_radios_html}
         </div>
-        <div class="local-tools">
-          <h3>Локальная загрузка прайса</h3>
-          <p>Запусти локальный сервер и загружай PDF прямо с этой страницы.</p>
-          <div class="local-tools-row">
-            <input type="file" id="pdf-file-input" accept=".pdf,application/pdf">
-            <button id="upload-pdf-btn">Загрузить PDF</button>
-            <button class="secondary" id="process-prices-btn">Обработать</button>
-          </div>
-          <div id="local-tools-status" class="local-status"></div>
-        </div>
       </div>
     </section>
 
@@ -885,37 +820,10 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
   </main>
   <script>
     const snapshots = {snapshots_json};
-    const LOCAL_API = "http://127.0.0.1:8765";
-
     const toggle = document.getElementById("toggle-hidden-fix");
     const dateRadios = document.querySelectorAll('input[name="price-date"]');
     const class1Body = document.querySelector("#class1-table tbody");
     const class2Body = document.querySelector("#class2-table tbody");
-    const fileInput = document.getElementById("pdf-file-input");
-    const uploadBtn = document.getElementById("upload-pdf-btn");
-    const processBtn = document.getElementById("process-prices-btn");
-    const localStatus = document.getElementById("local-tools-status");
-
-    function setLocalStatus(message, isError=false) {{
-      if (!localStatus) return;
-      localStatus.textContent = message;
-      localStatus.classList.toggle("error", Boolean(isError));
-    }}
-
-    async function apiCall(path, options={{}}) {{
-      const response = await fetch(`${{LOCAL_API}}${{path}}`, options);
-      let payload = {{}};
-      try {{
-        payload = await response.json();
-      }} catch (e) {{
-        payload = {{}};
-      }}
-      if (!response.ok || payload.ok === false) {{
-        const msg = payload.error || payload.message || `HTTP ${{response.status}}`;
-        throw new Error(msg);
-      }}
-      return payload;
-    }}
 
     function applySnapshot(index) {{
       const snap = snapshots[index];
@@ -938,67 +846,8 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       }});
     }});
 
-    if (uploadBtn && fileInput) {{
-      uploadBtn.addEventListener("click", async () => {{
-        const file = fileInput.files && fileInput.files[0];
-        if (!file) {{
-          setLocalStatus("Выберите PDF-файл перед загрузкой.", true);
-          return;
-        }}
-        const fileName = (file.name || "").toLowerCase();
-        if (!fileName.endsWith(".pdf")) {{
-          setLocalStatus("Можно загрузить только PDF.", true);
-          return;
-        }}
-        uploadBtn.disabled = true;
-        setLocalStatus("Загружаю PDF в локальную папку input...");
-        try {{
-          const result = await apiCall(`/api/upload?name=${{encodeURIComponent(file.name)}}`, {{
-            method: "POST",
-            headers: {{
-              "Content-Type": "application/pdf",
-            }},
-            body: file,
-          }});
-          setLocalStatus(`Файл загружен: ${{result.saved_as}}`);
-        }} catch (error) {{
-          setLocalStatus(`Ошибка загрузки: ${{error.message}}`, true);
-        }} finally {{
-          uploadBtn.disabled = false;
-        }}
-      }});
-    }}
-
-    if (processBtn) {{
-      processBtn.addEventListener("click", async () => {{
-        processBtn.disabled = true;
-        setLocalStatus("Запускаю обработку локально...");
-        try {{
-          await apiCall("/api/process", {{
-            method: "POST",
-          }});
-          setLocalStatus("Обработка завершена. Обновляю страницу...");
-          setTimeout(() => window.location.reload(), 900);
-        }} catch (error) {{
-          setLocalStatus(`Ошибка обработки: ${{error.message}}`, true);
-        }} finally {{
-          processBtn.disabled = false;
-        }}
-      }});
-    }}
-
-    async function initLocalTools() {{
-      try {{
-        await apiCall("/api/status");
-        setLocalStatus("Локальный сервер подключен. Можно загружать и обрабатывать PDF.");
-      }} catch (error) {{
-        setLocalStatus("Сервер не найден. Запусти run_local_uploader.bat и открой http://127.0.0.1:8765/", true);
-      }}
-    }}
-
     toggle.addEventListener("change", syncHiddenFixRows);
     syncHiddenFixRows();
-    initLocalTools();
   </script>
 </body>
 </html>
