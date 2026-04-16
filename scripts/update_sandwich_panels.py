@@ -1034,12 +1034,12 @@ def main() -> None:
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    (SITE_DIR / "index.html").write_text(
+    (SITE_DIR / "sandwich-panels.html").write_text(
         generate_html(current, comparison, payload["price_history"]), encoding="utf-8",
     )
     print("Updated:")
     print(DATA_DIR / "sandwich-panels.json")
-    print(SITE_DIR / "index.html")
+    print(SITE_DIR / "sandwich-panels.html")
 
 
 if __name__ == "__main__":
