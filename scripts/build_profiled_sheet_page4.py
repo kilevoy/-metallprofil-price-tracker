@@ -189,7 +189,7 @@ def build_records(rows: list[dict]) -> list[dict]:
 def build_date_radios(snapshots: list[dict]) -> str:
     radios = []
     for idx, snap in enumerate(snapshots):
-        checked = " checked" if idx == 0 else ""
+        checked = " checked" if idx == len(snapshots) - 1 else ""
         label = snap["uploaded_label"]
         radios.append(
             f'<label class="date-radio"><input type="radio" name="price-date" value="{idx}"{checked}><span class="date-label">{label}</span></label>'
@@ -391,7 +391,7 @@ def build_html(payload: dict) -> str:
 
   <script>
     const snapshots = {snapshots_json};
-    let data = snapshots[0].records;
+    let data = snapshots[snapshots.length - 1].records;
     const themeSwitcher = document.getElementById("theme-switcher");
     const sourceFileText = document.getElementById("source-file-text");
     const dateRadios = document.querySelectorAll('input[name="price-date"]');
@@ -589,28 +589,46 @@ def main() -> None:
     if not pdf_files:
         raise SystemExit("No PDF files found in input/")
 
-    snapshots: list[dict] = []
-    for pdf in pdf_files:
+    parsed_by_file: dict[str, dict] = {}
+    for pdf in sorted(pdf_files, key=parse_uploaded_datetime):
         doc = fitz.open(pdf)
         if len(doc) < TARGET_PAGE:
             continue
         page = doc[TARGET_PAGE - 1]
         rows, additions = parse_rows(page)
         records = build_records(rows)
+        parsed_by_file[pdf.name] = {
+            "uploaded_label": parse_uploaded_label(pdf),
+            "source_file": pdf.name,
+            "rows": rows,
+            "additions": additions,
+            "records": records,
+        }
+
+    # Единый список дат как в input/: даже если по разделу профнастила данных нет,
+    # используем последнее доступное состояние цен, чтобы набор дат совпадал между разделами.
+    snapshots: list[dict] = []
+    last_known: dict | None = None
+    for pdf in sorted(pdf_files, key=parse_uploaded_datetime):
+        parsed = parsed_by_file.get(pdf.name)
+        if parsed is not None:
+            last_known = parsed
+        if last_known is None:
+            continue
         snapshots.append(
             {
                 "uploaded_label": parse_uploaded_label(pdf),
                 "source_file": pdf.name,
-                "rows": rows,
-                "additions": additions,
-                "records": records,
+                "rows": last_known["rows"],
+                "additions": last_known["additions"],
+                "records": last_known["records"],
             }
         )
 
     if not snapshots:
         raise SystemExit(f"No suitable PDF with page {TARGET_PAGE} found in input/")
 
-    current = snapshots[0]
+    current = snapshots[-1]
 
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
