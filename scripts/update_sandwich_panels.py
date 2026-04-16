@@ -984,9 +984,18 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       }});
     }}
 
+    async function initLocalTools() {{
+      try {{
+        await apiCall("/api/status");
+        setLocalStatus("Локальный сервер подключен. Можно загружать и обрабатывать PDF.");
+      }} catch (error) {{
+        setLocalStatus("Сервер не найден. Запусти run_local_uploader.bat и открой http://127.0.0.1:8765/", true);
+      }}
+    }}
+
     toggle.addEventListener("change", syncHiddenFixRows);
     syncHiddenFixRows();
-    setLocalStatus("Для загрузки/обработки запусти локальный сервер: run_local_uploader.bat");
+    initLocalTools();
   </script>
 </body>
 </html>

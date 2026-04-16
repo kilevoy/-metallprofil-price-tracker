@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import mimetypes
 import subprocess
 import sys
 from datetime import datetime
@@ -12,6 +13,7 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_DIR = ROOT / "input"
 UPDATE_SCRIPT = ROOT / "scripts" / "update_sandwich_panels.py"
+SITE_INDEX = ROOT / "site" / "index.html"
 HOST = "127.0.0.1"
 PORT = 8765
 
@@ -65,6 +67,16 @@ class LocalUploadHandler(BaseHTTPRequestHandler):
                 }
             )
             return
+        if parsed.path == "/" or parsed.path == "/index.html":
+            self._serve_file(SITE_INDEX, "text/html; charset=utf-8")
+            return
+        if parsed.path.startswith("/site/") or parsed.path.startswith("/data/"):
+            rel = parsed.path.lstrip("/")
+            file_path = ROOT / rel
+            if file_path.exists() and file_path.is_file():
+                ctype, _ = mimetypes.guess_type(str(file_path))
+                self._serve_file(file_path, ctype or "application/octet-stream")
+                return
         self._json({"ok": False, "error": "Not found"}, status=404)
 
     def do_POST(self) -> None:  # noqa: N802
@@ -141,9 +153,18 @@ class LocalUploadHandler(BaseHTTPRequestHandler):
             }
         )
 
+    def _serve_file(self, path: Path, content_type: str) -> None:
+        data = path.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
 
 def main() -> None:
     print(f"[INFO] Local upload server: http://{HOST}:{PORT}")
+    print(f"[INFO] Open page here: http://{HOST}:{PORT}/")
     print(f"[INFO] Input folder: {INPUT_DIR}")
     print("[INFO] Endpoints: GET /api/status, POST /api/upload?name=..., POST /api/process")
     server = ThreadingHTTPServer((HOST, PORT), LocalUploadHandler)
@@ -158,4 +179,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

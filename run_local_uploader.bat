@@ -19,5 +19,5 @@ if not defined PY_CMD (
 )
 
 echo [INFO] Starting local upload server on http://127.0.0.1:8765
+start "" "http://127.0.0.1:8765/"
 %PY_CMD% scripts\local_upload_server.py
-
