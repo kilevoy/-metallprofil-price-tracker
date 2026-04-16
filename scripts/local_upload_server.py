@@ -13,6 +13,7 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_DIR = ROOT / "input"
 UPDATE_SCRIPT = ROOT / "scripts" / "update_sandwich_panels.py"
+PROFILED_SCRIPT = ROOT / "scripts" / "build_profiled_sheet_page4.py"
 SITE_INDEX = ROOT / "site" / "index.html"
 HOST = "127.0.0.1"
 PORT = 8765
@@ -121,35 +122,53 @@ class LocalUploadHandler(BaseHTTPRequestHandler):
         )
 
     def _handle_process(self) -> None:
-        try:
-            proc = subprocess.run(
-                [sys.executable, str(UPDATE_SCRIPT)],
-                cwd=str(ROOT),
-                capture_output=True,
-                text=True,
-                check=False,
-            )
-        except Exception as exc:
-            self._json({"ok": False, "error": str(exc)}, status=500)
-            return
+        scripts = [UPDATE_SCRIPT, PROFILED_SCRIPT]
+        outputs: list[dict] = []
 
-        if proc.returncode != 0:
-            self._json(
+        for script_path in scripts:
+            try:
+                proc = subprocess.run(
+                    [sys.executable, str(script_path)],
+                    cwd=str(ROOT),
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+            except Exception as exc:
+                self._json(
+                    {
+                        "ok": False,
+                        "error": f"Failed to run {script_path.name}: {exc}",
+                    },
+                    status=500,
+                )
+                return
+
+            outputs.append(
                 {
-                    "ok": False,
-                    "error": "Parser failed",
+                    "script": script_path.name,
+                    "returncode": proc.returncode,
                     "stdout": proc.stdout[-2000:],
                     "stderr": proc.stderr[-2000:],
-                },
-                status=500,
+                }
             )
-            return
+
+            if proc.returncode != 0:
+                self._json(
+                    {
+                        "ok": False,
+                        "error": f"Parser failed: {script_path.name}",
+                        "steps": outputs,
+                    },
+                    status=500,
+                )
+                return
 
         self._json(
             {
                 "ok": True,
-                "message": "Parser completed",
-                "stdout": proc.stdout[-2000:],
+                "message": "Parsers completed",
+                "steps": outputs,
             }
         )
 
