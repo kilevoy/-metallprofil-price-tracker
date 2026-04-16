@@ -197,7 +197,8 @@ def build_html(payload: dict) -> str:
   <title>\u041f\u0440\u043e\u0444\u043d\u0430\u0441\u0442\u0438\u043b \u0438 \u043f\u043b\u043e\u0441\u043a\u0438\u0439 \u043b\u0438\u0441\u0442 - \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 4</title>
   <style>
     :root {{
-      --font-ui: "Manrope", "Segoe UI", Tahoma, sans-serif;
+      --font-ui: "Segoe UI", Tahoma, Arial, sans-serif;
+      --font-head: Georgia, "Times New Roman", serif;
       --bg: #edf1f6;
       --bg-accent: #dce5f2;
       --surface: #ffffff;
@@ -212,7 +213,8 @@ def build_html(payload: dict) -> str:
       --shadow: 0 12px 34px rgba(10, 24, 40, 0.08);
     }}
     [data-theme="steel"] {{
-      --font-ui: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+      --font-ui: "Segoe UI", Tahoma, Arial, sans-serif;
+      --font-head: Georgia, "Times New Roman", serif;
       --bg: #eef2f5;
       --bg-accent: #dde6ed;
       --surface: #ffffff;
@@ -227,7 +229,8 @@ def build_html(payload: dict) -> str:
       --shadow: 0 10px 30px rgba(15, 32, 48, 0.1);
     }}
     [data-theme="graphite"] {{
-      --font-ui: "PT Sans", "Segoe UI", Tahoma, sans-serif;
+      --font-ui: "Segoe UI", Tahoma, Arial, sans-serif;
+      --font-head: Georgia, "Times New Roman", serif;
       --bg: #eceff2;
       --bg-accent: #d6dbe1;
       --surface: #ffffff;
@@ -242,7 +245,8 @@ def build_html(payload: dict) -> str:
       --shadow: 0 12px 32px rgba(22, 28, 36, 0.09);
     }}
     [data-theme="premium"] {{
-      --font-ui: "Merriweather Sans", "Segoe UI", Tahoma, sans-serif;
+      --font-ui: "Segoe UI", Tahoma, Arial, sans-serif;
+      --font-head: Georgia, "Times New Roman", serif;
       --bg: #f3f1ec;
       --bg-accent: #e5decc;
       --surface: #fffdf8;
@@ -267,7 +271,7 @@ def build_html(payload: dict) -> str:
     }}
     .page {{ width: min(1160px, calc(100% - 24px)); margin: 24px auto; }}
     .hero {{ background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }}
-    h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.1; }}
+    h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.1; font-family: var(--font-head); }}
     .meta {{ color: var(--muted); font-size: 14px; line-height: 1.4; }}
     .meta-row {{ display: flex; gap: 12px; align-items: end; justify-content: space-between; flex-wrap: wrap; }}
     .filters {{ margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }}
