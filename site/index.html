@@ -242,16 +242,16 @@
 
       <div class="grid">
         <a class="card" href="sandwich-panels.html">
-          <span class="badge">Прайс №1</span>
+          <span class="badge">Прайс 1</span>
           <h2 class="title">Сэндвич-панели</h2>
-          <p class="desc">Трехслойные панели, стандартные цвета и дополнительные опции.</p>
+          <p class="desc">Трехслойные панели, стандартные цвета и дополнительные опции.<br><strong id="sandwich-card-date">Действует с: —</strong></p>
           <div class="go">Открыть прайс</div>
         </a>
 
         <a class="card" href="profiled-sheet-page4.html">
-          <span class="badge alt">Прайс №2</span>
+          <span class="badge alt">Прайс 2</span>
           <h2 class="title">Профнастил и плоский лист</h2>
-          <p class="desc">Позиции с фильтрами по классу покрытия, типу покрытия и толщине.</p>
+          <p class="desc">Позиции с фильтрами по классу покрытия, типу покрытия и толщине.<br><strong id="profiled-card-date">Последнее изменение цен: —</strong></p>
           <div class="go">Открыть прайс</div>
         </a>
       </div>
@@ -263,11 +263,11 @@
         <div class="dates-grid">
           <article class="date-card">
             <strong>Сэндвич-панели</strong>
-            <p>Текущий: <b>12.04.2026</b><br>Предыдущий: <b>03.04.2026</b></p>
+            <p id="sandwich-dates">Текущий: <b>—</b><br>Предыдущий: <b>—</b></p>
           </article>
           <article class="date-card">
             <strong>Профнастил и плоский лист</strong>
-            <p>Актуальный сохраненный прайс: <b>12.04.2026</b></p>
+            <p id="profiled-dates">Актуальный сохраненный прайс: <b>—</b></p>
           </article>
         </div>
       </div>
@@ -290,6 +290,10 @@
     const uploadBtn = document.getElementById("upload-pdf-btn");
     const processBtn = document.getElementById("process-prices-btn");
     const localStatus = document.getElementById("local-tools-status");
+    const sandwichCardDate = document.getElementById("sandwich-card-date");
+    const profiledCardDate = document.getElementById("profiled-card-date");
+    const sandwichDates = document.getElementById("sandwich-dates");
+    const profiledDates = document.getElementById("profiled-dates");
 
     function setLocalStatus(message, isError = false) {
       if (!localStatus) return;
@@ -310,6 +314,52 @@
         throw new Error(msg);
       }
       return payload;
+    }
+
+    function extractDateFromFileName(fileName) {
+      const value = String(fileName || "");
+      const full = value.match(/(\d{2}\.\d{2}\.\d{2,4})/);
+      if (full) {
+        const date = full[1];
+        if (date.length === 8) return `${date.slice(0, 6)}20${date.slice(6)}`;
+        return date;
+      }
+      const short = value.match(/(\d{2}\.\d{2})/);
+      if (short) {
+        const year = new Date().getFullYear();
+        return `${short[1]}.${year}`;
+      }
+      return "";
+    }
+
+    async function initSavedPriceDates() {
+      try {
+        const sandwichRes = await fetch("data/sandwich-panels.json", { cache: "no-store" });
+        if (sandwichRes.ok) {
+          const sandwich = await sandwichRes.json();
+          const effective = (sandwich?.sandwich?.effective_date || "").trim();
+          const current = sandwich?.latest_uploaded_label || "—";
+          const previous = sandwich?.price_history?.length > 1 ? (sandwich.price_history[sandwich.price_history.length - 2]?.label || "—") : "—";
+          if (effective) {
+            sandwichCardDate.textContent = `Действует с: ${effective}`;
+          } else {
+            sandwichCardDate.textContent = `Последнее изменение цен: ${current}`;
+          }
+          sandwichDates.innerHTML = `Текущий: <b>${current}</b><br>Предыдущий: <b>${previous}</b>`;
+        }
+      } catch (e) {
+      }
+
+      try {
+        const profiledRes = await fetch("data/profiled-sheet-page4.json", { cache: "no-store" });
+        if (profiledRes.ok) {
+          const profiled = await profiledRes.json();
+          const latest = profiled?.latest_uploaded_label || extractDateFromFileName(profiled?.source_file) || "—";
+          profiledCardDate.textContent = `Последнее изменение цен: ${latest}`;
+          profiledDates.innerHTML = `Актуальный сохраненный прайс: <b>${latest}</b>`;
+        }
+      } catch (e) {
+      }
     }
 
     if (uploadBtn && fileInput) {
@@ -370,6 +420,7 @@
       }
     }
 
+    initSavedPriceDates();
     initLocalTools();
   </script>
 </body>

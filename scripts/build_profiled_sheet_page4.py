@@ -186,8 +186,20 @@ def build_records(rows: list[dict]) -> list[dict]:
     return records
 
 
+def build_date_radios(snapshots: list[dict]) -> str:
+    radios = []
+    for idx, snap in enumerate(snapshots):
+        checked = " checked" if idx == 0 else ""
+        label = snap["uploaded_label"]
+        radios.append(
+            f'<label class="date-radio"><input type="radio" name="price-date" value="{idx}"{checked}><span class="date-label">{label}</span></label>'
+        )
+    return "".join(radios)
+
+
 def build_html(payload: dict) -> str:
-    records_json = json.dumps(payload["records"], ensure_ascii=False)
+    snapshots_json = json.dumps(payload["price_history"], ensure_ascii=False)
+    date_radios_html = build_date_radios(payload["price_history"])
 
     return f"""<!doctype html>
 <html lang="ru">
@@ -288,6 +300,12 @@ def build_html(payload: dict) -> str:
     h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.1; font-family: var(--font-head); }}
     .meta {{ color: var(--muted); font-size: 14px; line-height: 1.4; }}
     .meta-row {{ display: flex; gap: 12px; align-items: end; justify-content: space-between; flex-wrap: wrap; }}
+    .date-picker-section {{ margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: var(--accent-soft); border: 1px solid var(--line); }}
+    .date-picker-title {{ margin: 0 0 8px; font-size: 13px; color: var(--muted); font-weight: 700; }}
+    .date-radios {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }}
+    .date-radio {{ display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; }}
+    .date-radio input[type="radio"] {{ width: 14px; height: 14px; accent-color: var(--accent); }}
+    .date-label {{ font-size: 13px; color: var(--text); }}
     .filters {{ margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }}
     label {{ display: grid; gap: 6px; font-size: 13px; color: var(--muted); }}
     select {{ border: 1px solid var(--line); border-radius: 10px; padding: 10px; font-size: 14px; background: var(--input-bg); color: var(--input-text); }}
@@ -306,6 +324,9 @@ def build_html(payload: dict) -> str:
     .price {{ font-weight: 700; color: var(--accent); white-space: nowrap; }}
     th:last-child, td:last-child {{ text-align: right; }}
     .muted {{ color: var(--muted); }}
+    @media (max-width: 680px) {{
+      .date-radios {{ grid-template-columns: 1fr; }}
+    }}
   </style>
 </head>
 <body>
@@ -315,7 +336,7 @@ def build_html(payload: dict) -> str:
       <h1>\u041f\u0420\u041e\u0424\u0418\u041b\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u042b\u0419 \u0418 \u041f\u041b\u041e\u0421\u041a\u0418\u0419 \u041b\u0418\u0421\u0422 \u0421 \u041f\u041e\u041b\u0418\u041c\u0415\u0420\u041d\u042b\u041c \u041f\u041e\u041a\u0420\u042b\u0422\u0418\u0415\u041c</h1>
       <div class="meta-row">
         <div class="meta">
-          \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: <strong>{payload["source_file"]}</strong>
+          \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: <strong id="source-file-text">{payload["source_file"]}</strong>
         </div>
         <label style="min-width: 260px;">
           \u0421\u0442\u0438\u043b\u044c \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f
@@ -325,6 +346,10 @@ def build_html(payload: dict) -> str:
             <option value="premium">\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0431\u0435\u0436\u0435\u0432\u044b\u0439</option>
           </select>
         </label>
+      </div>
+      <div class="date-picker-section">
+        <p class="date-picker-title">Выберите дату для просмотра цен:</p>
+        <div class="date-radios" id="date-radios">{date_radios_html}</div>
       </div>
       <div class="filters">
         <label>\u041a\u043b\u0430\u0441\u0441 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="class-filter"></select></label>
@@ -365,20 +390,21 @@ def build_html(payload: dict) -> str:
   </main>
 
   <script>
-    const data = {records_json};
+    const snapshots = {snapshots_json};
+    let data = snapshots[0].records;
     const themeSwitcher = document.getElementById("theme-switcher");
+    const sourceFileText = document.getElementById("source-file-text");
+    const dateRadios = document.querySelectorAll('input[name="price-date"]');
     const classFilter = document.getElementById("class-filter");
     const coatingFilter = document.getElementById("coating-filter");
     const thicknessFilter = document.getElementById("thickness-filter");
     const showSpecialRows = document.getElementById("show-special-rows");
     const tbody = document.getElementById("tbody");
 
-    const classes = Array.from(new Set(data.map(r => r.class_name)));
-    const allCoatings = Array.from(new Set(data.map(r => r.coating_type)));
-    const allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
-    const defaultCoating = allCoatings.includes("Полиэстер 25")
-      ? "Полиэстер 25"
-      : "Polyester 25";
+    let classes = [];
+    let allCoatings = [];
+    let allThicknesses = [];
+    let defaultCoating = "Polyester 25";
 
     const classLabels = {{
       STANDARD: "\u0421\u0422\u0410\u041d\u0414\u0410\u0420\u0422",
@@ -388,6 +414,34 @@ def build_html(payload: dict) -> str:
     const coatingLabel = (value) => value
       .replace(/^Polyester\b/, "Полиэстер")
       .replace(/^Steelmatt Polyester\b/, "Steelmatt Полиэстер");
+
+    function rebuildDomains() {{
+      classes = Array.from(new Set(data.map(r => r.class_name)));
+      allCoatings = Array.from(new Set(data.map(r => r.coating_type)));
+      allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
+      defaultCoating = allCoatings.includes("Полиэстер 25")
+        ? "Полиэстер 25"
+        : "Polyester 25";
+    }}
+
+    function applySnapshot(index) {{
+      const snap = snapshots[index];
+      if (!snap) return;
+      data = snap.records;
+      if (sourceFileText) {{
+        sourceFileText.textContent = snap.source_file;
+      }}
+      const prevClass = classFilter.value || "STANDARD";
+      const prevCoating = coatingFilter.value || defaultCoating;
+      const prevThickness = thicknessFilter.value || "all";
+      rebuildDomains();
+      setOptions(classFilter, classes, prevClass, (v) => classLabels[v] || v);
+      setOptions(coatingFilter, allCoatings, prevCoating, coatingLabel);
+      setOptions(thicknessFilter, allThicknesses, prevThickness);
+      syncCoatingOptions();
+      syncThicknessOptions();
+      render();
+    }}
 
     function applyTheme(theme) {{
       const allowed = ["steel", "graphite", "premium"];
@@ -485,6 +539,7 @@ def build_html(payload: dict) -> str:
 
     }}
 
+    rebuildDomains();
     setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
     setOptions(coatingFilter, allCoatings, defaultCoating, coatingLabel);
     setOptions(thicknessFilter, allThicknesses, "all");
@@ -501,6 +556,11 @@ def build_html(payload: dict) -> str:
     if (themeSwitcher) {{
       themeSwitcher.addEventListener("change", () => applyTheme(themeSwitcher.value));
     }}
+    dateRadios.forEach((radio) => {{
+      radio.addEventListener("change", (e) => {{
+        applySnapshot(parseInt(e.target.value));
+      }});
+    }});
     classFilter.addEventListener("change", () => {{
       syncCoatingOptions();
       syncThicknessOptions();
@@ -529,24 +589,47 @@ def main() -> None:
     if not pdf_files:
         raise SystemExit("No PDF files found in input/")
 
-    source_pdf = pdf_files[0]
-    doc = fitz.open(source_pdf)
-    if len(doc) < TARGET_PAGE:
-        raise SystemExit(f"PDF has only {len(doc)} page(s), cannot read page {TARGET_PAGE}")
+    snapshots: list[dict] = []
+    for pdf in pdf_files:
+        doc = fitz.open(pdf)
+        if len(doc) < TARGET_PAGE:
+            continue
+        page = doc[TARGET_PAGE - 1]
+        rows, additions = parse_rows(page)
+        records = build_records(rows)
+        snapshots.append(
+            {
+                "uploaded_label": parse_uploaded_label(pdf),
+                "source_file": pdf.name,
+                "rows": rows,
+                "additions": additions,
+                "records": records,
+            }
+        )
 
-    page = doc[TARGET_PAGE - 1]
-    rows, additions = parse_rows(page)
-    records = build_records(rows)
+    if not snapshots:
+        raise SystemExit(f"No suitable PDF with page {TARGET_PAGE} found in input/")
+
+    current = snapshots[0]
 
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "source_file": source_pdf.name,
+        "source_file": current["source_file"],
         "source_page": TARGET_PAGE,
         "section_title": SECTION_TITLE,
-        "rows": rows,
-        "additions": additions,
+        "latest_uploaded_label": current["uploaded_label"],
+        "rows": current["rows"],
+        "additions": current["additions"],
         "columns": [column.__dict__ for column in COLUMNS],
-        "records": records,
+        "records": current["records"],
+        "price_history": [
+            {
+                "uploaded_label": snap["uploaded_label"],
+                "source_file": snap["source_file"],
+                "records": snap["records"],
+            }
+            for snap in snapshots
+        ],
     }
 
     json_path = DATA_DIR / "profiled-sheet-page4.json"
