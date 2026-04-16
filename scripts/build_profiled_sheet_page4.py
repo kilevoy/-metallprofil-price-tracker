@@ -271,6 +271,20 @@ def build_html(payload: dict) -> str:
     }}
     .page {{ width: min(1160px, calc(100% - 24px)); margin: 24px auto; }}
     .hero {{ background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }}
+    .top-row {{ display: flex; justify-content: flex-end; margin-bottom: 8px; }}
+    .back-link {{
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }}
+    .back-link:hover {{ background: var(--accent-soft); }}
     h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.1; font-family: var(--font-head); }}
     .meta {{ color: var(--muted); font-size: 14px; line-height: 1.4; }}
     .meta-row {{ display: flex; gap: 12px; align-items: end; justify-content: space-between; flex-wrap: wrap; }}
@@ -297,6 +311,7 @@ def build_html(payload: dict) -> str:
 <body>
   <main class="page">
     <section class="hero">
+      <div class="top-row"><a class="back-link" href="index.html">← К оглавлению</a></div>
       <h1>\u041f\u0420\u041e\u0424\u0418\u041b\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u042b\u0419 \u0418 \u041f\u041b\u041e\u0421\u041a\u0418\u0419 \u041b\u0418\u0421\u0422 \u0421 \u041f\u041e\u041b\u0418\u041c\u0415\u0420\u041d\u042b\u041c \u041f\u041e\u041a\u0420\u042b\u0422\u0418\u0415\u041c</h1>
       <div class="meta-row">
         <div class="meta">

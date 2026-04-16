@@ -441,6 +441,28 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
       position: relative;
       overflow: hidden;
     }}
+    .top-row {{
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }}
+    .back-link {{
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--accent-deep);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(70, 53, 39, 0.15);
+      background: rgba(255, 255, 255, 0.86);
+    }}
+    .back-link:hover {{
+      background: rgba(178, 78, 45, 0.08);
+    }}
     .hero::after {{
       content: "";
       position: absolute;
@@ -702,6 +724,7 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
 <body>
   <main class="page">
     <section class="hero">
+      <div class="top-row"><a class="back-link" href="index.html">← К оглавлению</a></div>
       <p class="eyebrow">Сэндвич-панели</p>
       <h1>Прайс на сэндвич-панели</h1>
       <div class="meta">

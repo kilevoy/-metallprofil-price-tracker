@@ -37,6 +37,26 @@
       padding: 22px;
       box-shadow: var(--shadow);
     }
+    .top-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 6px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f7fbff;
+    }
+    .back-link:hover {
+      background: #e9f3fb;
+    }
     .eyebrow {
       margin: 0;
       color: var(--accent);
@@ -116,6 +136,40 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
+    .saved-dates {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #f8fbff;
+    }
+    .saved-dates h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .date-card {
+      padding: 10px 12px;
+      border: 1px solid #d7e2ee;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .date-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .date-card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
     .note {
       margin-top: 16px;
       font-size: 13px;
@@ -181,6 +235,7 @@
 <body>
   <main class="page">
     <section class="hero">
+      <div class="top-row"><a class="back-link" href="index.html">← К оглавлению</a></div>
       <p class="eyebrow">Каталог прайсов</p>
       <h1>Оглавление</h1>
       <p class="subtitle">Выберите раздел для просмотра актуальных цен. Сейчас доступны два прайса: сэндвич-панели и профнастил.</p>
@@ -202,6 +257,20 @@
       </div>
 
       <p class="note">Эта страница — стартовая. При добавлении новых прайсов дополним оглавление новыми карточками.</p>
+
+      <div class="saved-dates">
+        <h3>Даты сохраненных прайсов</h3>
+        <div class="dates-grid">
+          <article class="date-card">
+            <strong>Сэндвич-панели</strong>
+            <p>Текущий: <b>12.04.2026</b><br>Предыдущий: <b>03.04.2026</b></p>
+          </article>
+          <article class="date-card">
+            <strong>Профнастил и плоский лист</strong>
+            <p>Актуальный сохраненный прайс: <b>12.04.2026</b></p>
+          </article>
+        </div>
+      </div>
 
       <div class="local-tools">
         <h3>Локальная загрузка прайса</h3>
