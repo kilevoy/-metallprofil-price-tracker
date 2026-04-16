@@ -34,9 +34,9 @@ COLUMNS: list[PriceColumn] = [
     PriceColumn(1, CLASS_STANDARD, "VikingMP/COLOR 30", "0.45"),
     PriceColumn(2, CLASS_STANDARD, "VikingMP 30", "0.45"),
     PriceColumn(3, CLASS_STANDARD, "Polyester DS 25/25", "0.45"),
-    PriceColumn(4, CLASS_STANDARD, "Polyester 25", "0.45 (2)"),
+    PriceColumn(4, CLASS_STANDARD, "Polyester 25", "0.45"),
     PriceColumn(5, CLASS_STANDARD, "Polyester 25", "0.65"),
-    PriceColumn(6, CLASS_STANDARD, "Polyester/COLOR 25", "0.7 (2)"),
+    PriceColumn(6, CLASS_STANDARD, "Polyester/COLOR 25", "0.7"),
     PriceColumn(7, CLASS_STANDARD, "Polyester matte DS", "0.8"),
     PriceColumn(8, CLASS_STANDARD, "Steelmatt Polyester 25", "0.9"),
     PriceColumn(9, CLASS_STANDARD, "Steelmatt Polyester 25", "1.0"),
@@ -196,36 +196,88 @@ def build_html(payload: dict) -> str:
   <title>\u041f\u0440\u043e\u0444\u043d\u0430\u0441\u0442\u0438\u043b \u0438 \u043f\u043b\u043e\u0441\u043a\u0438\u0439 \u043b\u0438\u0441\u0442 - \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 4</title>
   <style>
     :root {{
-      --bg: #f4f3ef;
+      --font-ui: "Manrope", "Segoe UI", Tahoma, sans-serif;
+      --bg: #edf1f6;
+      --bg-accent: #dce5f2;
       --surface: #ffffff;
-      --text: #1e1d1a;
-      --muted: #666255;
-      --line: #e1ddd3;
-      --accent: #0f7c6d;
-      --accent-soft: #e7f3f1;
+      --text: #17212f;
+      --muted: #576173;
+      --line: #d8e0eb;
+      --accent: #1f4e79;
+      --accent-soft: #e6edf6;
+      --table-head: #f3f7fc;
+      --input-bg: #ffffff;
+      --input-text: #17212f;
+      --shadow: 0 12px 34px rgba(10, 24, 40, 0.08);
+    }}
+    [data-theme="steel"] {{
+      --font-ui: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+      --bg: #eef2f5;
+      --bg-accent: #dde6ed;
+      --surface: #ffffff;
+      --text: #1b2734;
+      --muted: #5b6876;
+      --line: #d2dbe4;
+      --accent: #0b5f8a;
+      --accent-soft: #e4f0f6;
+      --table-head: #f1f7fb;
+      --input-bg: #f9fcff;
+      --input-text: #1b2734;
+      --shadow: 0 10px 30px rgba(15, 32, 48, 0.1);
+    }}
+    [data-theme="graphite"] {{
+      --font-ui: "PT Sans", "Segoe UI", Tahoma, sans-serif;
+      --bg: #eceff2;
+      --bg-accent: #d6dbe1;
+      --surface: #ffffff;
+      --text: #1d2026;
+      --muted: #5d6470;
+      --line: #d7dce3;
+      --accent: #3b4f67;
+      --accent-soft: #e8ecf2;
+      --table-head: #f4f6f9;
+      --input-bg: #ffffff;
+      --input-text: #1d2026;
+      --shadow: 0 12px 32px rgba(22, 28, 36, 0.09);
+    }}
+    [data-theme="premium"] {{
+      --font-ui: "Merriweather Sans", "Segoe UI", Tahoma, sans-serif;
+      --bg: #f3f1ec;
+      --bg-accent: #e5decc;
+      --surface: #fffdf8;
+      --text: #2e2518;
+      --muted: #6f6658;
+      --line: #e2d9c7;
+      --accent: #7c5a21;
+      --accent-soft: #f0e8d9;
+      --table-head: #f7f2e9;
+      --input-bg: #fffdf9;
+      --input-text: #2e2518;
+      --shadow: 0 14px 36px rgba(58, 42, 18, 0.1);
     }}
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
+      font-family: var(--font-ui);
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 0%, #e6f2ef, transparent 30%),
+        radial-gradient(circle at 10% 0%, var(--bg-accent), transparent 30%),
         linear-gradient(180deg, #f9f8f5 0%, var(--bg) 100%);
     }}
     .page {{ width: min(1160px, calc(100% - 24px)); margin: 24px auto; }}
-    .hero {{ background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }}
+    .hero {{ background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }}
     h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.1; }}
     .meta {{ color: var(--muted); font-size: 14px; line-height: 1.4; }}
+    .meta-row {{ display: flex; gap: 12px; align-items: end; justify-content: space-between; flex-wrap: wrap; }}
     .filters {{ margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }}
     label {{ display: grid; gap: 6px; font-size: 13px; color: var(--muted); }}
-    select {{ border: 1px solid var(--line); border-radius: 10px; padding: 10px; font-size: 14px; background: #fff; color: var(--text); }}
-    .card {{ margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }}
+    select {{ border: 1px solid var(--line); border-radius: 10px; padding: 10px; font-size: 14px; background: var(--input-bg); color: var(--input-text); }}
+    .card {{ margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }}
     .summary {{ padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 14px; background: var(--accent-soft); }}
     .table-wrap {{ overflow: auto; }}
     table {{ width: 100%; border-collapse: collapse; min-width: 860px; }}
     th, td {{ text-align: left; border-bottom: 1px solid var(--line); padding: 10px 12px; vertical-align: top; font-size: 14px; }}
-    th {{ position: sticky; top: 0; background: #f8faf9; color: #353229; text-transform: uppercase; letter-spacing: 0.03em; font-size: 12px; }}
+    th {{ position: sticky; top: 0; background: var(--table-head); color: var(--text); text-transform: uppercase; letter-spacing: 0.03em; font-size: 12px; }}
     .price {{ font-weight: 700; color: var(--accent); white-space: nowrap; }}
     .muted {{ color: var(--muted); }}
   </style>
@@ -234,8 +286,18 @@ def build_html(payload: dict) -> str:
   <main class="page">
     <section class="hero">
       <h1>\u041f\u0420\u041e\u0424\u0418\u041b\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u042b\u0419 \u0418 \u041f\u041b\u041e\u0421\u041a\u0418\u0419 \u041b\u0418\u0421\u0422 \u0421 \u041f\u041e\u041b\u0418\u041c\u0415\u0420\u041d\u042b\u041c \u041f\u041e\u041a\u0420\u042b\u0422\u0418\u0415\u041c</h1>
-      <div class="meta">
-        \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: <strong>{payload["source_file"]}</strong>
+      <div class="meta-row">
+        <div class="meta">
+          \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: <strong>{payload["source_file"]}</strong>
+        </div>
+        <label style="min-width: 260px;">
+          \u0421\u0442\u0438\u043b\u044c \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f
+          <select id="theme-switcher">
+            <option value="steel">\u041a\u043e\u0440\u043f\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u044b\u0439 \u0441\u0438\u043d\u0438\u0439</option>
+            <option value="graphite">\u0413\u0440\u0430\u0444\u0438\u0442\u043e\u0432\u044b\u0439</option>
+            <option value="premium">\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0431\u0435\u0436\u0435\u0432\u044b\u0439</option>
+          </select>
+        </label>
       </div>
       <div class="filters">
         <label>\u041a\u043b\u0430\u0441\u0441 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="class-filter"></select></label>
@@ -270,6 +332,7 @@ def build_html(payload: dict) -> str:
 
   <script>
     const data = {records_json};
+    const themeSwitcher = document.getElementById("theme-switcher");
     const classFilter = document.getElementById("class-filter");
     const coatingFilter = document.getElementById("coating-filter");
     const thicknessFilter = document.getElementById("thickness-filter");
@@ -292,6 +355,19 @@ def build_html(payload: dict) -> str:
     const coatingLabel = (value) => value
       .replace(/^Polyester\b/, "Полиэстер")
       .replace(/^Steelmatt Polyester\b/, "Steelmatt Полиэстер");
+
+    function applyTheme(theme) {{
+      const allowed = ["steel", "graphite", "premium"];
+      const normalized = allowed.includes(theme) ? theme : "steel";
+      document.documentElement.setAttribute("data-theme", normalized);
+      if (themeSwitcher) {{
+        themeSwitcher.value = normalized;
+      }}
+      try {{
+        localStorage.setItem("profiledSheetTheme", normalized);
+      }} catch (error) {{
+      }}
+    }}
 
     function setOptions(select, items, selected, labelFn = null) {{
       const isAllowed = selected === "all" || items.includes(selected);
@@ -379,8 +455,19 @@ def build_html(payload: dict) -> str:
     setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
     setOptions(coatingFilter, allCoatings, defaultCoating, coatingLabel);
     setOptions(thicknessFilter, allThicknesses, "all");
+    const savedTheme = (() => {{
+      try {{
+        return localStorage.getItem("profiledSheetTheme");
+      }} catch (error) {{
+        return null;
+      }}
+    }})();
+    applyTheme(savedTheme || "steel");
     syncCoatingOptions();
     syncThicknessOptions();
+    if (themeSwitcher) {{
+      themeSwitcher.addEventListener("change", () => applyTheme(themeSwitcher.value));
+    }}
     classFilter.addEventListener("change", () => {{
       syncCoatingOptions();
       syncThicknessOptions();

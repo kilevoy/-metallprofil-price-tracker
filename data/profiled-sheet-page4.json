@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T10:33:44",
+  "generated_at": "2026-04-16T10:44:51",
   "source_file": "ПРАЙС 12.04___.pdf",
   "source_page": 4,
   "section_title": "ПРОФИЛИРОВАННЫЙ И ПЛОСКИЙ ЛИСТ С ПОЛИМЕРНЫМ ПОКРЫТИЕМ",
@@ -39,7 +39,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "567",
           "price": 567
@@ -55,7 +55,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "785",
           "price": 785
@@ -161,7 +161,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "555",
           "price": 555
@@ -177,7 +177,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -283,7 +283,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "1 665",
           "price": 1665
@@ -299,7 +299,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "2 355",
           "price": 2355
@@ -405,7 +405,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "567",
           "price": 567
@@ -421,7 +421,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "825",
           "price": 825
@@ -527,7 +527,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "555",
           "price": 555
@@ -543,7 +543,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -649,7 +649,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "567",
           "price": 567
@@ -665,7 +665,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "825",
           "price": 825
@@ -771,7 +771,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "555",
           "price": 555
@@ -787,7 +787,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -893,7 +893,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "592",
           "price": 592
@@ -909,7 +909,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "840",
           "price": 840
@@ -1015,7 +1015,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "580",
           "price": 580
@@ -1031,7 +1031,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -1137,7 +1137,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "592",
           "price": 592
@@ -1153,7 +1153,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "840",
           "price": 840
@@ -1259,7 +1259,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "580",
           "price": 580
@@ -1275,7 +1275,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -1381,7 +1381,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "647",
           "price": 647
@@ -1397,7 +1397,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "925",
           "price": 925
@@ -1503,7 +1503,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "635",
           "price": 635
@@ -1519,7 +1519,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "-",
           "price": null
@@ -1625,7 +1625,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "635",
           "price": 635
@@ -1641,7 +1641,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "925",
           "price": 925
@@ -1747,7 +1747,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "635",
           "price": 635
@@ -1763,7 +1763,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "925",
           "price": 925
@@ -1869,7 +1869,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "635",
           "price": 635
@@ -1885,7 +1885,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "925",
           "price": 925
@@ -1991,7 +1991,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "-",
           "price": null
@@ -2007,7 +2007,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "1 060",
           "price": 1060
@@ -2113,7 +2113,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "1 345",
           "price": 1345
@@ -2129,7 +2129,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "1 780",
           "price": 1780
@@ -2235,7 +2235,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "1 650",
           "price": 1650
@@ -2251,7 +2251,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "2 190",
           "price": 2190
@@ -2357,7 +2357,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester 25",
-          "thickness": "0.45 (2)",
+          "thickness": "0.45",
           "thickness_value": "0.45",
           "price_raw": "1 580",
           "price": 1580
@@ -2373,7 +2373,7 @@
         {
           "class_name": "STANDARD",
           "coating_type": "Polyester/COLOR 25",
-          "thickness": "0.7 (2)",
+          "thickness": "0.7",
           "thickness_value": "0.7",
           "price_raw": "1 895",
           "price": 1895
@@ -2488,7 +2488,7 @@
       "index": 4,
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)"
+      "thickness": "0.45"
     },
     {
       "index": 5,
@@ -2500,7 +2500,7 @@
       "index": 6,
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)"
+      "thickness": "0.7"
     },
     {
       "index": 7,
@@ -2590,7 +2590,7 @@
       "product_name": "Плоский лист",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "567",
@@ -2612,7 +2612,7 @@
       "product_name": "Плоский лист",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "785",
@@ -2744,7 +2744,7 @@
       "product_name": "Плоский лист стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "555",
@@ -2766,7 +2766,7 @@
       "product_name": "Плоский лист стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -2898,7 +2898,7 @@
       "product_name": "Фасонное издение (в пленке)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "1 665",
@@ -2920,7 +2920,7 @@
       "product_name": "Фасонное издение (в пленке)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "2 355",
@@ -3052,7 +3052,7 @@
       "product_name": "С-8 х 1150 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "567",
@@ -3074,7 +3074,7 @@
       "product_name": "С-8 х 1150 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "825",
@@ -3206,7 +3206,7 @@
       "product_name": "С-8 х 1150 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "555",
@@ -3228,7 +3228,7 @@
       "product_name": "С-8 х 1150 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -3360,7 +3360,7 @@
       "product_name": "МП-10 х 1100 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "567",
@@ -3382,7 +3382,7 @@
       "product_name": "МП-10 х 1100 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "825",
@@ -3514,7 +3514,7 @@
       "product_name": "МП-10 х 1100 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "555",
@@ -3536,7 +3536,7 @@
       "product_name": "МП-10 х 1100 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -3668,7 +3668,7 @@
       "product_name": "МП-18 х 1100 - А, В ****",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "592",
@@ -3690,7 +3690,7 @@
       "product_name": "МП-18 х 1100 - А, В ****",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "840",
@@ -3822,7 +3822,7 @@
       "product_name": "МП-18 х 1100 стандартный (1) ****",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "580",
@@ -3844,7 +3844,7 @@
       "product_name": "МП-18 х 1100 стандартный (1) ****",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -3976,7 +3976,7 @@
       "product_name": "МП-20 х 1100 - А, В, R",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "592",
@@ -3998,7 +3998,7 @@
       "product_name": "МП-20 х 1100 - А, В, R",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "840",
@@ -4130,7 +4130,7 @@
       "product_name": "МП-20 х 1100  стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "580",
@@ -4152,7 +4152,7 @@
       "product_name": "МП-20 х 1100  стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -4284,7 +4284,7 @@
       "product_name": "С-21 х 1000 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "647",
@@ -4306,7 +4306,7 @@
       "product_name": "С-21 х 1000 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "925",
@@ -4438,7 +4438,7 @@
       "product_name": "С-21 х 1000 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "635",
@@ -4460,7 +4460,7 @@
       "product_name": "С-21 х 1000 стандартный (1)",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -4592,7 +4592,7 @@
       "product_name": "МП-35 х 1035 - А, В***",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "635",
@@ -4614,7 +4614,7 @@
       "product_name": "МП-35 х 1035 - А, В***",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "925",
@@ -4746,7 +4746,7 @@
       "product_name": "НС-35 х1000 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "635",
@@ -4768,7 +4768,7 @@
       "product_name": "НС-35 х1000 - A,B",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "925",
@@ -4900,7 +4900,7 @@
       "product_name": "С-44 х 1000 -А, В",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "635",
@@ -4922,7 +4922,7 @@
       "product_name": "С-44 х 1000 -А, В",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "925",
@@ -5054,7 +5054,7 @@
       "product_name": "Н-60 х 845 - А,В",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "-",
@@ -5076,7 +5076,7 @@
       "product_name": "Н-60 х 845 - А,В",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "1 060",
@@ -5208,7 +5208,7 @@
       "product_name": "Н-75 х 750 - А, В",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "1 345",
@@ -5230,7 +5230,7 @@
       "product_name": "Н-75 х 750 - А, В",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "1 780",
@@ -5362,7 +5362,7 @@
       "product_name": "Н-114 х 600 - А,В",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "1 650",
@@ -5384,7 +5384,7 @@
       "product_name": "Н-114 х 600 - А,В",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "2 190",
@@ -5516,7 +5516,7 @@
       "product_name": "Н-114 х 750 - А,В ***",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
-      "thickness": "0.45 (2)",
+      "thickness": "0.45",
       "thickness_value": "0.45",
       "unit": "м.кв.",
       "price_raw": "1 580",
@@ -5538,7 +5538,7 @@
       "product_name": "Н-114 х 750 - А,В ***",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
-      "thickness": "0.7 (2)",
+      "thickness": "0.7",
       "thickness_value": "0.7",
       "unit": "м.кв.",
       "price_raw": "1 895",
