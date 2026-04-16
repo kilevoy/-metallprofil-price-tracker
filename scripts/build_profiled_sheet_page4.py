@@ -82,6 +82,25 @@ def find_page_index_by_terms(doc: fitz.Document, required_terms: list[str]) -> i
     raise ValueError(f"Page not found for terms: {required_terms}")
 
 
+def find_profiled_page(doc: fitz.Document) -> tuple[int, list[dict], list[dict]]:
+    required_terms = [term.lower() for term in PROFILED_PAGE_TERMS]
+    best: tuple[int, list[dict], list[dict]] | None = None
+
+    for index in range(len(doc)):
+        page_text = doc[index].get_text().lower()
+        if not all(term in page_text for term in required_terms):
+            continue
+        rows, additions = parse_rows(doc[index])
+        if best is None or len(rows) > len(best[1]):
+            best = (index, rows, additions)
+
+    if best is None:
+        raise ValueError(f"Page not found for terms: {required_terms}")
+    if not best[1]:
+        raise ValueError("Profiled-sheet section found, but no rows were parsed")
+    return best
+
+
 def parse_money(raw: str) -> int | None:
     value = raw.strip()
     if not value or value == "-":
@@ -607,14 +626,9 @@ def main() -> None:
     for pdf in sorted(pdf_files, key=parse_uploaded_datetime):
         doc = fitz.open(pdf)
         try:
-            page_index = find_page_index_by_terms(doc, PROFILED_PAGE_TERMS)
+            page_index, rows, additions = find_profiled_page(doc)
         except Exception as exc:
             print(f"[WARN] Failed to find profiled-sheet section in {pdf.name}: {exc}")
-            continue
-        page = doc[page_index]
-        rows, additions = parse_rows(page)
-        if not rows:
-            print(f"[WARN] Profiled-sheet section found but no rows parsed in {pdf.name}")
             continue
         records = build_records(rows)
         parsed_by_file[pdf.name] = {
