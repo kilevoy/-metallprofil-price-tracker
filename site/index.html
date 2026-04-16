@@ -244,14 +244,14 @@
         <a class="card" href="sandwich-panels.html">
           <span class="badge">Прайс 1</span>
           <h2 class="title">Сэндвич-панели</h2>
-          <p class="desc">Трехслойные панели, стандартные цвета и дополнительные опции.<br><strong id="sandwich-card-date">Действует с: —</strong></p>
+          <p class="desc">Трехслойные панели, стандартные цвета и дополнительные опции.<br><strong id="sandwich-card-date">Актуальный прайс: —</strong></p>
           <div class="go">Открыть прайс</div>
         </a>
 
         <a class="card" href="profiled-sheet-page4.html">
           <span class="badge alt">Прайс 2</span>
           <h2 class="title">Профнастил и плоский лист</h2>
-          <p class="desc">Позиции с фильтрами по классу покрытия, типу покрытия и толщине.<br><strong id="profiled-card-date">Последнее изменение цен: —</strong></p>
+          <p class="desc">Позиции с фильтрами по классу покрытия, типу покрытия и толщине.<br><strong id="profiled-card-date">Актуальный прайс: —</strong></p>
           <div class="go">Открыть прайс</div>
         </a>
       </div>
@@ -341,9 +341,9 @@
           const current = sandwich?.latest_uploaded_label || "—";
           const previous = sandwich?.price_history?.length > 1 ? (sandwich.price_history[sandwich.price_history.length - 2]?.label || "—") : "—";
           if (effective) {
-            sandwichCardDate.textContent = `Действует с: ${effective}`;
+            sandwichCardDate.textContent = `Актуальный прайс: ${current} (действует с: ${effective})`;
           } else {
-            sandwichCardDate.textContent = `Последнее изменение цен: ${current}`;
+            sandwichCardDate.textContent = `Актуальный прайс: ${current}`;
           }
           sandwichDates.innerHTML = `Текущий: <b>${current}</b><br>Предыдущий: <b>${previous}</b>`;
         }
@@ -355,7 +355,7 @@
         if (profiledRes.ok) {
           const profiled = await profiledRes.json();
           const latest = profiled?.latest_uploaded_label || extractDateFromFileName(profiled?.source_file) || "—";
-          profiledCardDate.textContent = `Последнее изменение цен: ${latest}`;
+          profiledCardDate.textContent = `Актуальный прайс: ${latest}`;
           profiledDates.innerHTML = `Актуальный сохраненный прайс: <b>${latest}</b>`;
         }
       } catch (e) {
