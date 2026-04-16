@@ -596,6 +596,8 @@ def build_html(payload: dict) -> str:
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     SITE_DIR.mkdir(parents=True, exist_ok=True)
+    site_data_dir = SITE_DIR / "data"
+    site_data_dir.mkdir(parents=True, exist_ok=True)
 
     pdf_files = sorted(INPUT_DIR.glob("*.pdf"), key=parse_uploaded_datetime, reverse=True)
     if not pdf_files:
@@ -678,13 +680,16 @@ def main() -> None:
     }
 
     json_path = DATA_DIR / "profiled-sheet-page4.json"
+    site_json_path = site_data_dir / "profiled-sheet-page4.json"
     html_path = SITE_DIR / "profiled-sheet-page4.html"
 
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    site_json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     html_path.write_text(build_html(payload), encoding="utf-8")
 
     print("Updated:")
     print(json_path)
+    print(site_json_path)
     print(html_path)
 
 

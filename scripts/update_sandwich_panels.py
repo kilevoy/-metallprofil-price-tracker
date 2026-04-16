@@ -880,6 +880,8 @@ def generate_html(current: ParsedPdf, comparison: dict, price_history: list[dict
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     SITE_DIR.mkdir(parents=True, exist_ok=True)
+    site_data_dir = SITE_DIR / "data"
+    site_data_dir.mkdir(parents=True, exist_ok=True)
 
     pdf_files = sorted(INPUT_DIR.glob("*.pdf"), key=parse_uploaded_datetime)
     if not pdf_files:
@@ -957,11 +959,16 @@ def main() -> None:
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    (site_data_dir / "sandwich-panels.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     (SITE_DIR / "sandwich-panels.html").write_text(
         generate_html(current, comparison, payload["price_history"]), encoding="utf-8",
     )
     print("Updated:")
     print(DATA_DIR / "sandwich-panels.json")
+    print(site_data_dir / "sandwich-panels.json")
     print(SITE_DIR / "sandwich-panels.html")
 
 
