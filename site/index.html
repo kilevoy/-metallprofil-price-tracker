@@ -170,6 +170,18 @@
       color: var(--muted);
       line-height: 1.45;
     }
+    .dates-inline-list {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text);
+      word-break: break-word;
+    }
+    .dates-count {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
     .note {
       margin-top: 16px;
       font-size: 13px;
@@ -262,12 +274,14 @@
         <h3>Даты сохраненных прайсов</h3>
         <div class="dates-grid">
           <article class="date-card">
-            <strong>Сэндвич-панели</strong>
-            <p id="sandwich-dates">Текущий: <b>—</b><br>Предыдущий: <b>—</b></p>
+            <strong>Общий список дат (для всех разделов)</strong>
+            <p id="shared-dates" class="dates-inline-list">—</p>
+            <p id="shared-dates-count" class="dates-count">Всего сохранено: —</p>
           </article>
           <article class="date-card">
-            <strong>Профнастил и плоский лист</strong>
-            <p id="profiled-dates">Актуальный сохраненный прайс: <b>—</b></p>
+            <strong>Актуальные даты по разделам</strong>
+            <p id="sandwich-dates">Сэндвич-панели: <b>—</b></p>
+            <p id="profiled-dates">Профнастил и плоский лист: <b>—</b></p>
           </article>
         </div>
       </div>
@@ -292,6 +306,8 @@
     const localStatus = document.getElementById("local-tools-status");
     const sandwichCardDate = document.getElementById("sandwich-card-date");
     const profiledCardDate = document.getElementById("profiled-card-date");
+    const sharedDates = document.getElementById("shared-dates");
+    const sharedDatesCount = document.getElementById("shared-dates-count");
     const sandwichDates = document.getElementById("sandwich-dates");
     const profiledDates = document.getElementById("profiled-dates");
 
@@ -332,20 +348,50 @@
       return "";
     }
 
+    function normalizeDateLabel(value) {
+      const text = String(value || "").trim();
+      if (!text) return "";
+      const full = text.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      if (full) return text;
+      const shortYear = text.match(/^(\d{2})\.(\d{2})\.(\d{2})$/);
+      if (shortYear) return `${shortYear[1]}.${shortYear[2]}.20${shortYear[3]}`;
+      return extractDateFromFileName(text);
+    }
+
+    function parseDateLabel(label) {
+      const m = String(label || "").match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      if (!m) return NaN;
+      return new Date(Number(m[3]), Number(m[2]) - 1, Number(m[1])).getTime();
+    }
+
+    function uniqueSortedDateLabels(values) {
+      const seen = new Set();
+      const normalized = [];
+      for (const value of values || []) {
+        const label = normalizeDateLabel(value);
+        if (!label || seen.has(label)) continue;
+        seen.add(label);
+        normalized.push(label);
+      }
+      return normalized.sort((a, b) => parseDateLabel(b) - parseDateLabel(a));
+    }
+
     async function initSavedPriceDates() {
+      let sandwich = null;
+      let profiled = null;
+
       try {
         const sandwichRes = await fetch("data/sandwich-panels.json", { cache: "no-store" });
         if (sandwichRes.ok) {
-          const sandwich = await sandwichRes.json();
+          sandwich = await sandwichRes.json();
           const effective = (sandwich?.sandwich?.effective_date || "").trim();
-          const current = sandwich?.latest_uploaded_label || "—";
-          const previous = sandwich?.price_history?.length > 1 ? (sandwich.price_history[sandwich.price_history.length - 2]?.label || "—") : "—";
+          const current = normalizeDateLabel(sandwich?.latest_uploaded_label) || "—";
           if (effective) {
             sandwichCardDate.textContent = `Актуальный прайс: ${current} (действует с: ${effective})`;
           } else {
             sandwichCardDate.textContent = `Актуальный прайс: ${current}`;
           }
-          sandwichDates.innerHTML = `Текущий: <b>${current}</b><br>Предыдущий: <b>${previous}</b>`;
+          sandwichDates.innerHTML = `Сэндвич-панели: <b>${current}</b>`;
         }
       } catch (e) {
       }
@@ -353,12 +399,25 @@
       try {
         const profiledRes = await fetch("data/profiled-sheet-page4.json", { cache: "no-store" });
         if (profiledRes.ok) {
-          const profiled = await profiledRes.json();
-          const latest = profiled?.latest_uploaded_label || extractDateFromFileName(profiled?.source_file) || "—";
+          profiled = await profiledRes.json();
+          const latest = normalizeDateLabel(profiled?.latest_uploaded_label) || normalizeDateLabel(profiled?.source_file) || "—";
           profiledCardDate.textContent = `Актуальный прайс: ${latest}`;
-          profiledDates.innerHTML = `Актуальный сохраненный прайс: <b>${latest}</b>`;
+          profiledDates.innerHTML = `Профнастил и плоский лист: <b>${latest}</b>`;
         }
       } catch (e) {
+      }
+
+      const sandwichLabels = Array.isArray(sandwich?.price_history)
+        ? sandwich.price_history.map((item) => item?.label || item?.date || "")
+        : [];
+      const profiledLabels = Array.isArray(profiled?.price_history)
+        ? profiled.price_history.map((item) => item?.uploaded_label || "")
+        : [];
+      const combinedLabels = uniqueSortedDateLabels([...sandwichLabels, ...profiledLabels]);
+
+      if (combinedLabels.length > 0) {
+        sharedDates.textContent = combinedLabels.join(", ");
+        sharedDatesCount.textContent = `Всего сохранено: ${combinedLabels.length}`;
       }
     }
 
