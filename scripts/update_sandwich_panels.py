@@ -325,16 +325,16 @@ def compare_prices(current: ParsedPdf, previous: ParsedPdf | None) -> dict:
     }
 
 
-def build_price_history(parsed_pdfs: list[ParsedPdf]) -> list[dict]:
+def build_price_history(snapshots: list[dict]) -> list[dict]:
     history = []
-    for parsed in sorted(parsed_pdfs, key=lambda item: parse_uploaded_datetime(item.pdf_path)):
+    for snap in snapshots:
         history.append(
             {
-                "date": parsed.uploaded_label,
-                "effective_date": parsed.sandwich["effective_date"],
-                "label": parsed.uploaded_label,
-                "sandwich": parsed.sandwich,
-                "source_file": parsed.pdf_path.name,
+                "date": snap["uploaded_label"],
+                "effective_date": snap["sandwich"]["effective_date"],
+                "label": snap["uploaded_label"],
+                "sandwich": snap["sandwich"],
+                "source_file": snap["source_file"],
             }
         )
     return history
@@ -881,23 +881,74 @@ def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     SITE_DIR.mkdir(parents=True, exist_ok=True)
 
-    pdf_files = sorted(INPUT_DIR.glob("*.pdf"), key=parse_uploaded_datetime, reverse=True)
+    pdf_files = sorted(INPUT_DIR.glob("*.pdf"), key=parse_uploaded_datetime)
     if not pdf_files:
       raise SystemExit("No PDF files found in input/")
 
-    parsed_pdfs = [parse_pdf(path) for path in pdf_files]
-    current = parsed_pdfs[0]
-    previous = parsed_pdfs[1] if len(parsed_pdfs) > 1 else None
+    parsed_by_file: dict[str, ParsedPdf] = {}
+    for path in pdf_files:
+        try:
+            parsed_by_file[path.name] = parse_pdf(path)
+        except Exception as exc:
+            print(f"[WARN] Failed to fully parse {path.name}: {exc}")
+
+    # Единый список дат как в input/: если PDF не распарсился, используем
+    # последнее доступное состояние цен, чтобы дата не выпадала из истории.
+    snapshots: list[dict] = []
+    last_known: ParsedPdf | None = None
+    for path in pdf_files:
+        parsed = parsed_by_file.get(path.name)
+        if parsed is not None:
+            last_known = parsed
+        if last_known is None:
+            continue
+        snapshots.append(
+            {
+                "uploaded_label": parse_uploaded_label(path),
+                "source_file": path.name,
+                "sandwich": last_known.sandwich,
+                "colors": last_known.colors,
+            }
+        )
+
+    # В истории оставляем уникальные даты: если за одну дату есть несколько PDF,
+    # берем последнее доступное состояние для этой даты.
+    snapshots_by_label: dict[str, dict] = {}
+    for snap in snapshots:
+        snapshots_by_label[snap["uploaded_label"]] = snap
+    snapshots = list(snapshots_by_label.values())
+
+    if not snapshots:
+        raise SystemExit("No suitable PDF data found for sandwich panels in input/")
+
+    current_snapshot = snapshots[-1]
+    previous_snapshot = snapshots[-2] if len(snapshots) > 1 else None
+    current = ParsedPdf(
+        pdf_path=Path(current_snapshot["source_file"]),
+        uploaded_label=current_snapshot["uploaded_label"],
+        sandwich=current_snapshot["sandwich"],
+        colors=current_snapshot["colors"],
+    )
+    previous = (
+        ParsedPdf(
+            pdf_path=Path(previous_snapshot["source_file"]),
+            uploaded_label=previous_snapshot["uploaded_label"],
+            sandwich=previous_snapshot["sandwich"],
+            colors=previous_snapshot["colors"],
+        )
+        if previous_snapshot
+        else None
+    )
     comparison = compare_prices(current, previous)
-    price_history = build_price_history(parsed_pdfs)
+    price_history = build_price_history(snapshots)
 
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "current_file": current.pdf_path.name,
-        "previous_file": previous.pdf_path.name if previous else None,
-        "latest_uploaded_label": current.uploaded_label,
-        "sandwich": current.sandwich,
-        "colors": current.colors,
+        "current_file": current_snapshot["source_file"],
+        "previous_file": previous_snapshot["source_file"] if previous_snapshot else None,
+        "latest_uploaded_label": current_snapshot["uploaded_label"],
+        "sandwich": current_snapshot["sandwich"],
+        "colors": current_snapshot["colors"],
         "comparison": comparison,
         "price_history": price_history,
     }

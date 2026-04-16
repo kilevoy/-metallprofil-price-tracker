@@ -625,6 +625,13 @@ def main() -> None:
             }
         )
 
+    # В истории оставляем уникальные даты: если за одну дату есть несколько PDF,
+    # берем последнее доступное состояние для этой даты.
+    snapshots_by_label: dict[str, dict] = {}
+    for snap in snapshots:
+        snapshots_by_label[snap["uploaded_label"]] = snap
+    snapshots = list(snapshots_by_label.values())
+
     if not snapshots:
         raise SystemExit(f"No suitable PDF with page {TARGET_PAGE} found in input/")
 
