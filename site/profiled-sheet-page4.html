@@ -71,7 +71,7 @@
               <th>Наименование продукции</th>
               <th>Тип покрытия</th>
               <th>Толщина</th>
-              <th>Цена</th>
+              <th>Цена, руб./м.кв.</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -135,7 +135,7 @@
         const byClass = classValue === "all" || row.class_name === classValue;
         const byThickness = thicknessValue === "all" || row.thickness_value === thicknessValue;
         const isStandardName = /стандартн/i.test(row.product_name);
-        const isWarehouse = /\*(3, 4)/.test(row.product_name);
+        const isWarehouse = /\*{3,4}/.test(row.product_name);
         const isSpecial = isStandardName || isWarehouse;
         const bySpecial = includeSpecial ? true : !isSpecial;
         return byClass && byThickness && bySpecial && row.price !== null;
@@ -158,7 +158,7 @@
           <td>${row.product_name}</td>
           <td class="muted">${row.coating_type}</td>
           <td>${row.thickness}</td>
-          <td class="price">${formatPrice(row.price)} руб./${row.unit}</td>
+          <td class="price">${formatPrice(row.price)}</td>
         </tr>
       `).join("");
 

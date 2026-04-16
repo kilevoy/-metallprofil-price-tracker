@@ -261,7 +261,7 @@ def build_html(payload: dict) -> str:
               <th>\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438</th>
               <th>\u0422\u0438\u043f \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f</th>
               <th>\u0422\u043e\u043b\u0449\u0438\u043d\u0430</th>
-              <th>\u0426\u0435\u043d\u0430</th>
+              <th>\u0426\u0435\u043d\u0430, \u0440\u0443\u0431./\u043c.\u043a\u0432.</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -325,7 +325,7 @@ def build_html(payload: dict) -> str:
         const byClass = classValue === "all" || row.class_name === classValue;
         const byThickness = thicknessValue === "all" || row.thickness_value === thicknessValue;
         const isStandardName = /стандартн/i.test(row.product_name);
-        const isWarehouse = /\\*{3,4}/.test(row.product_name);
+        const isWarehouse = /\\*{{3,4}}/.test(row.product_name);
         const isSpecial = isStandardName || isWarehouse;
         const bySpecial = includeSpecial ? true : !isSpecial;
         return byClass && byThickness && bySpecial && row.price !== null;
@@ -348,7 +348,7 @@ def build_html(payload: dict) -> str:
           <td>${{row.product_name}}</td>
           <td class="muted">${{row.coating_type}}</td>
           <td>${{row.thickness}}</td>
-          <td class="price">${{formatPrice(row.price)}} \u0440\u0443\u0431./${{row.unit}}</td>
+          <td class="price">${{formatPrice(row.price)}}</td>
         </tr>
       `).join("");
 
