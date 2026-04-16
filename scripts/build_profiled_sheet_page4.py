@@ -243,6 +243,12 @@ def build_html(payload: dict) -> str:
         <label>\u041a\u043b\u0430\u0441\u0441 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="class-filter"></select></label>
         <label>\u0422\u043e\u043b\u0449\u0438\u043d\u0430<select id="thickness-filter"></select></label>
       </div>
+      <div class="filters" style="margin-top: 10px;">
+        <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text);">
+          <input type="checkbox" id="show-special-rows">
+          <span>\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u043a\u043b\u0430\u0434\u0441\u043a\u0438\u0435 \u0438 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0435 \u043f\u043e\u0437\u0438\u0446\u0438\u0438</span>
+        </label>
+      </div>
     </section>
 
     <section class="card">
@@ -268,6 +274,7 @@ def build_html(payload: dict) -> str:
     const data = {records_json};
     const classFilter = document.getElementById("class-filter");
     const thicknessFilter = document.getElementById("thickness-filter");
+    const showSpecialRows = document.getElementById("show-special-rows");
     const tbody = document.getElementById("tbody");
     const summary = document.getElementById("summary");
 
@@ -312,11 +319,16 @@ def build_html(payload: dict) -> str:
     function render() {{
       const classValue = classFilter.value;
       const thicknessValue = thicknessFilter.value;
+      const includeSpecial = showSpecialRows && showSpecialRows.checked;
 
       const filtered = data.filter((row) => {{
         const byClass = classValue === "all" || row.class_name === classValue;
         const byThickness = thicknessValue === "all" || row.thickness_value === thicknessValue;
-        return byClass && byThickness && row.price !== null;
+        const isStandardName = /стандартн/i.test(row.product_name);
+        const isWarehouse = /\\*{3,4}/.test(row.product_name);
+        const isSpecial = isStandardName || isWarehouse;
+        const bySpecial = includeSpecial ? true : !isSpecial;
+        return byClass && byThickness && bySpecial && row.price !== null;
       }});
 
       const tailRowNos = new Set([1, 2, 3]);
@@ -351,6 +363,9 @@ def build_html(payload: dict) -> str:
       render();
     }});
     thicknessFilter.addEventListener("change", render);
+    if (showSpecialRows) {{
+      showSpecialRows.addEventListener("change", render);
+    }}
     render();
   </script>
 </body>
