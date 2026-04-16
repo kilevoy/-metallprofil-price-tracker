@@ -120,7 +120,7 @@
         return byClass && byThickness && row.price !== null;
       });
 
-      const tailRowNos = new Set([1, 3]);
+      const tailRowNos = new Set([1, 2, 3]);
       const sorted = [...filtered].sort((a, b) => {
         const aTail = tailRowNos.has(a.product_row_no) ? 1 : 0;
         const bTail = tailRowNos.has(b.product_row_no) ? 1 : 0;
