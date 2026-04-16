@@ -78,7 +78,7 @@ def normalize_thickness(text: str) -> str:
 def parse_rows(page: fitz.Page) -> tuple[list[dict], list[dict]]:
     rows: list[dict] = []
     additions: list[dict] = []
-    started = False
+    started = True
     in_additions = False
 
     for block in page.get_text("blocks"):
@@ -89,8 +89,6 @@ def parse_rows(page: fitz.Page) -> tuple[list[dict], list[dict]]:
         compact = " ".join(text.split())
         if SECTION_TITLE in compact:
             started = True
-            continue
-        if not started:
             continue
         if compact == "Р”РћРџРћР›РќРРўР•Р›Р¬РќРћ":
             in_additions = True
