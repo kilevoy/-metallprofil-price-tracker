@@ -14,8 +14,11 @@ INPUT_DIR = ROOT / "input"
 DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
 
-TARGET_PAGE = 4
 SECTION_TITLE = "\u041f\u0420\u041e\u0424\u0418\u041b\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u042b\u0419 \u0418 \u041f\u041b\u041e\u0421\u041a\u0418\u0419 \u041b\u0418\u0421\u0422 \u0421 \u041f\u041e\u041b\u0418\u041c\u0415\u0420\u041d\u042b\u041c \u041f\u041e\u041a\u0420\u042b\u0422\u0418\u0415\u041c"
+PROFILED_PAGE_TERMS = [
+    "профилированный и плоский лист",
+    "с полимерным покрытием",
+]
 
 
 @dataclass(frozen=True)
@@ -68,6 +71,15 @@ def parse_uploaded_label(path: Path) -> str:
 
 def parse_uploaded_datetime(path: Path) -> datetime:
     return datetime.strptime(parse_uploaded_label(path), "%d.%m.%Y")
+
+
+def find_page_index_by_terms(doc: fitz.Document, required_terms: list[str]) -> int:
+    required_terms = [term.lower() for term in required_terms]
+    for index in range(len(doc)):
+        page_text = doc[index].get_text().lower()
+        if all(term in page_text for term in required_terms):
+            return index
+    raise ValueError(f"Page not found for terms: {required_terms}")
 
 
 def parse_money(raw: str) -> int | None:
@@ -592,14 +604,21 @@ def main() -> None:
     parsed_by_file: dict[str, dict] = {}
     for pdf in sorted(pdf_files, key=parse_uploaded_datetime):
         doc = fitz.open(pdf)
-        if len(doc) < TARGET_PAGE:
+        try:
+            page_index = find_page_index_by_terms(doc, PROFILED_PAGE_TERMS)
+        except Exception as exc:
+            print(f"[WARN] Failed to find profiled-sheet section in {pdf.name}: {exc}")
             continue
-        page = doc[TARGET_PAGE - 1]
+        page = doc[page_index]
         rows, additions = parse_rows(page)
+        if not rows:
+            print(f"[WARN] Profiled-sheet section found but no rows parsed in {pdf.name}")
+            continue
         records = build_records(rows)
         parsed_by_file[pdf.name] = {
             "uploaded_label": parse_uploaded_label(pdf),
             "source_file": pdf.name,
+            "source_page": page_index + 1,
             "rows": rows,
             "additions": additions,
             "records": records,
@@ -619,6 +638,7 @@ def main() -> None:
             {
                 "uploaded_label": parse_uploaded_label(pdf),
                 "source_file": pdf.name,
+                "source_page": last_known["source_page"],
                 "rows": last_known["rows"],
                 "additions": last_known["additions"],
                 "records": last_known["records"],
@@ -633,14 +653,14 @@ def main() -> None:
     snapshots = list(snapshots_by_label.values())
 
     if not snapshots:
-        raise SystemExit(f"No suitable PDF with page {TARGET_PAGE} found in input/")
+        raise SystemExit("No suitable PDF with profiled-sheet section found in input/")
 
     current = snapshots[-1]
 
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "source_file": current["source_file"],
-        "source_page": TARGET_PAGE,
+        "source_page": current["source_page"],
         "section_title": SECTION_TITLE,
         "latest_uploaded_label": current["uploaded_label"],
         "rows": current["rows"],
