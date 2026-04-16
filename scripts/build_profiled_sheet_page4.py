@@ -239,6 +239,7 @@ def build_html(payload: dict) -> str:
       </div>
       <div class="filters">
         <label>\u041a\u043b\u0430\u0441\u0441 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="class-filter"></select></label>
+        <label>\u0422\u0438\u043f \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f<select id="coating-filter"></select></label>
         <label>\u0422\u043e\u043b\u0449\u0438\u043d\u0430<select id="thickness-filter"></select></label>
       </div>
       <div class="filters" style="margin-top: 10px;">
@@ -270,19 +271,27 @@ def build_html(payload: dict) -> str:
   <script>
     const data = {records_json};
     const classFilter = document.getElementById("class-filter");
+    const coatingFilter = document.getElementById("coating-filter");
     const thicknessFilter = document.getElementById("thickness-filter");
     const showSpecialRows = document.getElementById("show-special-rows");
     const tbody = document.getElementById("tbody");
     const summary = document.getElementById("summary");
 
     const classes = Array.from(new Set(data.map(r => r.class_name)));
+    const allCoatings = Array.from(new Set(data.map(r => r.coating_type)));
     const allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
+    const defaultCoating = allCoatings.includes("Полиэстер 25")
+      ? "Полиэстер 25"
+      : "Polyester 25";
 
     const classLabels = {{
       STANDARD: "\u0421\u0422\u0410\u041d\u0414\u0410\u0420\u0422",
       ECONOM: "\u042d\u041a\u041e\u041d\u041e\u041c",
       RETAIL: "RETAIL",
     }};
+    const coatingLabel = (value) => value
+      .replace(/^Polyester\b/, "Полиэстер")
+      .replace(/^Steelmatt Polyester\b/, "Steelmatt Полиэстер");
 
     function setOptions(select, items, selected, labelFn = null) {{
       const isAllowed = selected === "all" || items.includes(selected);
@@ -296,12 +305,26 @@ def build_html(payload: dict) -> str:
       select.innerHTML = html;
     }}
 
+    function syncCoatingOptions() {{
+      const classValue = classFilter.value;
+      const availableCoatings = Array.from(
+        new Set(
+          data
+            .filter((row) => classValue === "all" || row.class_name === classValue)
+            .map((row) => row.coating_type)
+        )
+      );
+      setOptions(coatingFilter, availableCoatings, coatingFilter.value || defaultCoating, coatingLabel);
+    }}
+
     function syncThicknessOptions() {{
       const classValue = classFilter.value;
+      const coatingValue = coatingFilter.value;
       const availableThicknesses = Array.from(
         new Set(
           data
             .filter((row) => classValue === "all" || row.class_name === classValue)
+            .filter((row) => coatingValue === "all" || row.coating_type === coatingValue)
             .map((row) => row.thickness_value)
         )
       );
@@ -315,17 +338,19 @@ def build_html(payload: dict) -> str:
 
     function render() {{
       const classValue = classFilter.value;
+      const coatingValue = coatingFilter.value;
       const thicknessValue = thicknessFilter.value;
       const includeSpecial = showSpecialRows && showSpecialRows.checked;
 
       const filtered = data.filter((row) => {{
         const byClass = classValue === "all" || row.class_name === classValue;
+        const byCoating = coatingValue === "all" || row.coating_type === coatingValue;
         const byThickness = thicknessValue === "all" || row.thickness_value === thicknessValue;
         const isStandardName = /стандартн/i.test(row.product_name);
         const isWarehouse = /\\*{{3,4}}/.test(row.product_name);
         const isSpecial = isStandardName || isWarehouse;
         const bySpecial = includeSpecial ? true : !isSpecial;
-        return byClass && byThickness && bySpecial && row.price !== null;
+        return byClass && byCoating && byThickness && bySpecial && row.price !== null;
       }});
 
       const tailRowNos = new Set([1, 2, 3]);
@@ -352,9 +377,16 @@ def build_html(payload: dict) -> str:
     }}
 
     setOptions(classFilter, classes, "STANDARD", (v) => classLabels[v] || v);
+    setOptions(coatingFilter, allCoatings, defaultCoating, coatingLabel);
     setOptions(thicknessFilter, allThicknesses, "all");
+    syncCoatingOptions();
     syncThicknessOptions();
     classFilter.addEventListener("change", () => {{
+      syncCoatingOptions();
+      syncThicknessOptions();
+      render();
+    }});
+    coatingFilter.addEventListener("change", () => {{
       syncThicknessOptions();
       render();
     }});
