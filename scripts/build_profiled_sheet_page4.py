@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import re
@@ -15,7 +15,7 @@ DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
 
 TARGET_PAGE = 4  # 1-based page number
-SECTION_TITLE = "ПРОФИЛИРОВАННЫЙ И ПЛОСКИЙ ЛИСТ С ПОЛИМЕРНЫМ ПОКРЫТИЕМ"
+SECTION_TITLE = "РџР РћР¤РР›РР РћР’РђРќРќР«Р™ Р РџР›РћРЎРљРР™ Р›РРЎРў РЎ РџРћР›РРњР•Р РќР«Рњ РџРћРљР Р«РўРР•Рњ"
 
 
 @dataclass(frozen=True)
@@ -27,20 +27,20 @@ class PriceColumn:
 
 
 COLUMNS: list[PriceColumn] = [
-    PriceColumn(1, "СТАНДАРТ", "VikingMP/COLOR 30 мкм", "0.45"),
-    PriceColumn(2, "СТАНДАРТ", "VikingMP 30 мкм", "0.45"),
-    PriceColumn(3, "СТАНДАРТ", "Полиэстер двустор. 25/25 мкм", "0.45"),
-    PriceColumn(4, "СТАНДАРТ", "Полиэстер 25 мкм", "0.45 (2)"),
-    PriceColumn(5, "СТАНДАРТ", "Полиэстер 25 мкм", "0.65"),
-    PriceColumn(6, "СТАНДАРТ", "Полиэстер/COLOR 25 мкм", "0.7 (2)"),
-    PriceColumn(7, "СТАНДАРТ", "Полиэстер матовый двустор.", "0.8"),
-    PriceColumn(8, "СТАНДАРТ", "Steelmatt Полиэстер 25 мкм", "0.9"),
-    PriceColumn(9, "СТАНДАРТ", "Steelmatt Полиэстер 25 мкм", "1.0"),
-    PriceColumn(10, "ЭКОНОМ", "Полиэстер 25 мкм", "0.4"),
-    PriceColumn(11, "ЭКОНОМ", "Полиэстер/COLOR 25 мкм", "0.4"),
-    PriceColumn(12, "ЭКОНОМ", "Полиэстер матовый двустор.", "0.4"),
-    PriceColumn(13, "ЭКОНОМ", "Steelmatt Полиэстер 25 мкм", "0.4"),
-    PriceColumn(14, "RETAIL", "СТ**", "СТ**"),
+    PriceColumn(1, "РЎРўРђРќР”РђР Рў", "VikingMP/COLOR 30 РјРєРј", "0.45"),
+    PriceColumn(2, "РЎРўРђРќР”РђР Рў", "VikingMP 30 РјРєРј", "0.45"),
+    PriceColumn(3, "РЎРўРђРќР”РђР Рў", "РџРѕР»РёСЌСЃС‚РµСЂ РґРІСѓСЃС‚РѕСЂ. 25/25 РјРєРј", "0.45"),
+    PriceColumn(4, "РЎРўРђРќР”РђР Рў", "РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "0.45 (2)"),
+    PriceColumn(5, "РЎРўРђРќР”РђР Рў", "РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "0.65"),
+    PriceColumn(6, "РЎРўРђРќР”РђР Рў", "РџРѕР»РёСЌСЃС‚РµСЂ/COLOR 25 РјРєРј", "0.7 (2)"),
+    PriceColumn(7, "РЎРўРђРќР”РђР Рў", "РџРѕР»РёСЌСЃС‚РµСЂ РјР°С‚РѕРІС‹Р№ РґРІСѓСЃС‚РѕСЂ.", "0.8"),
+    PriceColumn(8, "РЎРўРђРќР”РђР Рў", "Steelmatt РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "0.9"),
+    PriceColumn(9, "РЎРўРђРќР”РђР Рў", "Steelmatt РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "1.0"),
+    PriceColumn(10, "Р­РљРћРќРћРњ", "РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "0.4"),
+    PriceColumn(11, "Р­РљРћРќРћРњ", "РџРѕР»РёСЌСЃС‚РµСЂ/COLOR 25 РјРєРј", "0.4"),
+    PriceColumn(12, "Р­РљРћРќРћРњ", "РџРѕР»РёСЌСЃС‚РµСЂ РјР°С‚РѕРІС‹Р№ РґРІСѓСЃС‚РѕСЂ.", "0.4"),
+    PriceColumn(13, "Р­РљРћРќРћРњ", "Steelmatt РџРѕР»РёСЌСЃС‚РµСЂ 25 РјРєРј", "0.4"),
+    PriceColumn(14, "RETAIL", "РЎРў**", "РЎРў**"),
 ]
 
 
@@ -92,7 +92,7 @@ def parse_rows(page: fitz.Page) -> tuple[list[dict], list[dict]]:
             continue
         if not started:
             continue
-        if compact == "ДОПОЛНИТЕЛЬНО":
+        if compact == "Р”РћРџРћР›РќРРўР•Р›Р¬РќРћ":
             in_additions = True
             continue
 
@@ -182,15 +182,15 @@ def build_records(rows: list[dict]) -> list[dict]:
 
 def build_html(payload: dict) -> str:
     records_json = json.dumps(payload["records"], ensure_ascii=False)
-    default_class = "СТАНДАРТ"
-    default_thickness = "0.45"
+    default_class = "РЎРўРђРќР”РђР Рў"
+    default_thickness = "all"
 
     return f"""<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Профнастил и плоский лист - страница 4</title>
+  <title>РџСЂРѕС„РЅР°СЃС‚РёР» Рё РїР»РѕСЃРєРёР№ Р»РёСЃС‚ - СЃС‚СЂР°РЅРёС†Р° 4</title>
   <style>
     :root {{
       --bg: #f4f3ef;
@@ -305,19 +305,19 @@ def build_html(payload: dict) -> str:
 <body>
   <main class="page">
     <section class="hero">
-      <h1>Профнастил и плоский лист (страница 4)</h1>
+      <h1>РџСЂРѕС„РЅР°СЃС‚РёР» Рё РїР»РѕСЃРєРёР№ Р»РёСЃС‚ (СЃС‚СЂР°РЅРёС†Р° 4)</h1>
       <div class="meta">
-        Источник: <strong>{payload["source_file"]}</strong><br>
-        Раздел: <strong>{payload["section_title"]}</strong><br>
-        Позиции: <strong>{len(payload["rows"])}</strong>, строк в блоке "Дополнительно": <strong>{len(payload["additions"])}</strong>
+        РСЃС‚РѕС‡РЅРёРє: <strong>{payload["source_file"]}</strong><br>
+        Р Р°Р·РґРµР»: <strong>{payload["section_title"]}</strong><br>
+        РџРѕР·РёС†РёРё: <strong>{len(payload["rows"])}</strong>, СЃС‚СЂРѕРє РІ Р±Р»РѕРєРµ "Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ": <strong>{len(payload["additions"])}</strong>
       </div>
       <div class="filters">
         <label>
-          Класс покрытия
+          РљР»Р°СЃСЃ РїРѕРєСЂС‹С‚РёСЏ
           <select id="class-filter"></select>
         </label>
         <label>
-          Толщина
+          РўРѕР»С‰РёРЅР°
           <select id="thickness-filter"></select>
         </label>
       </div>
@@ -329,11 +329,11 @@ def build_html(payload: dict) -> str:
         <table>
           <thead>
             <tr>
-              <th>№</th>
-              <th>Наименование продукции</th>
-              <th>Тип покрытия</th>
-              <th>Толщина</th>
-              <th>Цена</th>
+              <th>в„–</th>
+              <th>РќР°РёРјРµРЅРѕРІР°РЅРёРµ РїСЂРѕРґСѓРєС†РёРё</th>
+              <th>РўРёРї РїРѕРєСЂС‹С‚РёСЏ</th>
+              <th>РўРѕР»С‰РёРЅР°</th>
+              <th>Р¦РµРЅР°</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -350,13 +350,27 @@ def build_html(payload: dict) -> str:
     const summary = document.getElementById("summary");
 
     const classes = Array.from(new Set(data.map(r => r.class_name)));
-    const thicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
+    const allThicknesses = Array.from(new Set(data.map(r => r.thickness_value)));
 
     function setOptions(select, items, selected) {{
-      const html = ['<option value=\"all\">Все</option>']
-        .concat(items.map(item => `<option value=\"${{item}}\" ${{item === selected ? "selected" : ""}}>${{item}}</option>`))
+      const isAllowed = selected === "all" || items.includes(selected);
+      const selectedValue = isAllowed ? selected : "all";
+      const html = ['<option value=\"all\">Р’СЃРµ</option>']
+        .concat(items.map(item => `<option value=\"${{item}}\" ${{item === selectedValue ? "selected" : ""}}>${{item}}</option>`))
         .join("");
       select.innerHTML = html;
+    }}
+
+    function syncThicknessOptions() {{
+      const classValue = classFilter.value;
+      const availableThicknesses = Array.from(
+        new Set(
+          data
+            .filter((row) => classValue === "all" || row.class_name === classValue)
+            .map((row) => row.thickness_value)
+        )
+      );
+      setOptions(thicknessFilter, availableThicknesses, thicknessFilter.value || "all");
     }}
 
     function formatPrice(value) {{
@@ -380,16 +394,20 @@ def build_html(payload: dict) -> str:
           <td>${{row.product_name}}</td>
           <td class="muted">${{row.coating_type}}</td>
           <td>${{row.thickness}}</td>
-          <td class="price">${{formatPrice(row.price)}} ₽/${{row.unit}}</td>
+          <td class="price">${{formatPrice(row.price)}} в‚Ѕ/${{row.unit}}</td>
         </tr>
       `).join("");
 
-      summary.textContent = `Найдено строк: ${{filtered.length}}`;
+      summary.textContent = `РќР°Р№РґРµРЅРѕ СЃС‚СЂРѕРє: ${{filtered.length}}`;
     }}
 
     setOptions(classFilter, classes, "{default_class}");
-    setOptions(thicknessFilter, thicknesses, "{default_thickness}");
-    classFilter.addEventListener("change", render);
+    setOptions(thicknessFilter, allThicknesses, "{default_thickness}");
+    syncThicknessOptions();
+    classFilter.addEventListener("change", () => {{
+      syncThicknessOptions();
+      render();
+    }});
     thicknessFilter.addEventListener("change", render);
     render();
   </script>
@@ -438,3 +456,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
