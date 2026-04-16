@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass
+from decimal import ROUND_HALF_UP, Decimal
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -96,7 +97,7 @@ def parse_uploaded_datetime(path: Path) -> datetime:
 def format_number(value: float) -> str:
     if value is None:
         return "-"
-    rounded = int(round(value))
+    rounded = int(Decimal(str(value)).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
     return f"{rounded:,}".replace(",", " ")
 
 
@@ -127,7 +128,9 @@ def parse_accessories_prices(doc: fitz.Document) -> dict:
     )
     if "м.кв." not in poly_block:
         raise ValueError("Unexpected format for polyester flat sheet row")
-    poly_tokens = parse_price_tokens(poly_block.split("м.кв.", 1)[1])
+    # Для этой строки цены идут как отдельные колонки, поэтому разбираем
+    # только "целые" и "десятичные с запятой", без склейки через пробел.
+    poly_tokens = re.findall(r"\d+,\d+|\d+", poly_block.split("м.кв.", 1)[1])
     if len(poly_tokens) < 2:
         raise ValueError("Not enough polyester prices in flat sheet row")
     polyester_05_base = parse_currency_value(poly_tokens[0])
