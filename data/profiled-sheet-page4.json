@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T11:04:56",
+  "generated_at": "2026-04-16T11:09:13",
   "source_file": "ПРАЙС 12.04___.pdf",
   "source_page": 4,
   "section_title": "ПРОФИЛИРОВАННЫЙ И ПЛОСКИЙ ЛИСТ С ПОЛИМЕРНЫМ ПОКРЫТИЕМ",
@@ -2555,6 +2555,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -2566,6 +2567,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -2577,6 +2579,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -2588,6 +2591,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -2599,6 +2603,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -2610,6 +2615,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -2621,6 +2627,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -2632,6 +2639,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -2643,6 +2651,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -2654,6 +2663,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -2665,6 +2675,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -2676,6 +2687,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -2687,6 +2699,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -2698,6 +2711,7 @@
     {
       "product_row_no": 1,
       "product_name": "Плоский лист",
+      "profile_width_full_mm": "1250",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -2709,6 +2723,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -2720,6 +2735,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -2731,6 +2747,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -2742,6 +2759,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -2753,6 +2771,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -2764,6 +2783,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -2775,6 +2795,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -2786,6 +2807,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -2797,6 +2819,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -2808,6 +2831,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -2819,6 +2843,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -2830,6 +2855,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -2841,6 +2867,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -2852,6 +2879,7 @@
     {
       "product_row_no": 2,
       "product_name": "Плоский лист стандартный (1)",
+      "profile_width_full_mm": "1250",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -2863,6 +2891,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -2874,6 +2903,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -2885,6 +2915,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -2896,6 +2927,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -2907,6 +2939,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -2918,6 +2951,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -2929,6 +2963,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -2940,6 +2975,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -2951,6 +2987,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -2962,6 +2999,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -2973,6 +3011,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -2984,6 +3023,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -2995,6 +3035,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3006,6 +3047,7 @@
     {
       "product_row_no": 3,
       "product_name": "Фасонное издение (в пленке)",
+      "profile_width_full_mm": "-",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3017,6 +3059,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3028,6 +3071,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3039,6 +3083,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3050,6 +3095,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3061,6 +3107,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3072,6 +3119,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3083,6 +3131,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3094,6 +3143,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3105,6 +3155,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3116,6 +3167,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3127,6 +3179,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3138,6 +3191,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3149,6 +3203,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3160,6 +3215,7 @@
     {
       "product_row_no": 4,
       "product_name": "С-8 х 1150 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3171,6 +3227,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3182,6 +3239,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3193,6 +3251,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3204,6 +3263,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3215,6 +3275,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3226,6 +3287,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3237,6 +3299,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3248,6 +3311,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3259,6 +3323,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3270,6 +3335,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3281,6 +3347,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3292,6 +3359,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3303,6 +3371,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3314,6 +3383,7 @@
     {
       "product_row_no": 5,
       "product_name": "С-8 х 1150 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3325,6 +3395,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3336,6 +3407,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3347,6 +3419,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3358,6 +3431,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3369,6 +3443,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3380,6 +3455,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3391,6 +3467,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3402,6 +3479,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3413,6 +3491,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3424,6 +3503,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3435,6 +3515,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3446,6 +3527,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3457,6 +3539,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3468,6 +3551,7 @@
     {
       "product_row_no": 6,
       "product_name": "МП-10 х 1100 - A,B",
+      "profile_width_full_mm": "1200",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3479,6 +3563,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3490,6 +3575,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3501,6 +3587,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3512,6 +3599,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3523,6 +3611,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3534,6 +3623,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3545,6 +3635,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3556,6 +3647,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3567,6 +3659,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3578,6 +3671,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3589,6 +3683,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3600,6 +3695,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3611,6 +3707,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3622,6 +3719,7 @@
     {
       "product_row_no": 7,
       "product_name": "МП-10 х 1100 стандартный (1)",
+      "profile_width_full_mm": "1200",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3633,6 +3731,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3644,6 +3743,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3655,6 +3755,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3666,6 +3767,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3677,6 +3779,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3688,6 +3791,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3699,6 +3803,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3710,6 +3815,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3721,6 +3827,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3732,6 +3839,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3743,6 +3851,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3754,6 +3863,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3765,6 +3875,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3776,6 +3887,7 @@
     {
       "product_row_no": 8,
       "product_name": "МП-18 х 1100 - А, В ****",
+      "profile_width_full_mm": "1150",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3787,6 +3899,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3798,6 +3911,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3809,6 +3923,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3820,6 +3935,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3831,6 +3947,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3842,6 +3959,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -3853,6 +3971,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -3864,6 +3983,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -3875,6 +3995,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -3886,6 +4007,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -3897,6 +4019,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -3908,6 +4031,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -3919,6 +4043,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -3930,6 +4055,7 @@
     {
       "product_row_no": 9,
       "product_name": "МП-18 х 1100 стандартный (1) ****",
+      "profile_width_full_mm": "1150",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -3941,6 +4067,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -3952,6 +4079,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -3963,6 +4091,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -3974,6 +4103,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -3985,6 +4115,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -3996,6 +4127,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4007,6 +4139,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4018,6 +4151,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4029,6 +4163,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4040,6 +4175,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4051,6 +4187,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4062,6 +4199,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4073,6 +4211,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4084,6 +4223,7 @@
     {
       "product_row_no": 10,
       "product_name": "МП-20 х 1100 - А, В, R",
+      "profile_width_full_mm": "1150",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4095,6 +4235,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4106,6 +4247,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4117,6 +4259,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4128,6 +4271,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4139,6 +4283,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4150,6 +4295,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4161,6 +4307,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4172,6 +4319,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4183,6 +4331,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4194,6 +4343,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4205,6 +4355,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4216,6 +4367,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4227,6 +4379,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4238,6 +4391,7 @@
     {
       "product_row_no": 11,
       "product_name": "МП-20 х 1100  стандартный (1)",
+      "profile_width_full_mm": "1150",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4249,6 +4403,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4260,6 +4415,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4271,6 +4427,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4282,6 +4439,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4293,6 +4451,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4304,6 +4463,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4315,6 +4475,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4326,6 +4487,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4337,6 +4499,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4348,6 +4511,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4359,6 +4523,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4370,6 +4535,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4381,6 +4547,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4392,6 +4559,7 @@
     {
       "product_row_no": 12,
       "product_name": "С-21 х 1000 - A,B",
+      "profile_width_full_mm": "1051",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4403,6 +4571,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4414,6 +4583,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4425,6 +4595,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4436,6 +4607,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4447,6 +4619,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4458,6 +4631,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4469,6 +4643,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4480,6 +4655,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4491,6 +4667,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4502,6 +4679,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4513,6 +4691,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4524,6 +4703,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4535,6 +4715,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4546,6 +4727,7 @@
     {
       "product_row_no": 13,
       "product_name": "С-21 х 1000 стандартный (1)",
+      "profile_width_full_mm": "1051",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4557,6 +4739,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4568,6 +4751,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4579,6 +4763,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4590,6 +4775,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4601,6 +4787,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4612,6 +4799,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4623,6 +4811,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4634,6 +4823,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4645,6 +4835,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4656,6 +4847,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4667,6 +4859,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4678,6 +4871,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4689,6 +4883,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4700,6 +4895,7 @@
     {
       "product_row_no": 14,
       "product_name": "МП-35 х 1035 - А, В***",
+      "profile_width_full_mm": "1076",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4711,6 +4907,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4722,6 +4919,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4733,6 +4931,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4744,6 +4943,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4755,6 +4955,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4766,6 +4967,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4777,6 +4979,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4788,6 +4991,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4799,6 +5003,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4810,6 +5015,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4821,6 +5027,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4832,6 +5039,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4843,6 +5051,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -4854,6 +5063,7 @@
     {
       "product_row_no": 15,
       "product_name": "НС-35 х1000 - A,B",
+      "profile_width_full_mm": "1060",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -4865,6 +5075,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -4876,6 +5087,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -4887,6 +5099,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -4898,6 +5111,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -4909,6 +5123,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -4920,6 +5135,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -4931,6 +5147,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -4942,6 +5159,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -4953,6 +5171,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -4964,6 +5183,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -4975,6 +5195,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -4986,6 +5207,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -4997,6 +5219,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -5008,6 +5231,7 @@
     {
       "product_row_no": 16,
       "product_name": "С-44 х 1000 -А, В",
+      "profile_width_full_mm": "1047",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -5019,6 +5243,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -5030,6 +5255,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -5041,6 +5267,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -5052,6 +5279,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -5063,6 +5291,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -5074,6 +5303,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -5085,6 +5315,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -5096,6 +5327,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -5107,6 +5339,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -5118,6 +5351,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -5129,6 +5363,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -5140,6 +5375,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -5151,6 +5387,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -5162,6 +5399,7 @@
     {
       "product_row_no": 17,
       "product_name": "Н-60 х 845 - А,В",
+      "profile_width_full_mm": "902",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -5173,6 +5411,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -5184,6 +5423,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -5195,6 +5435,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -5206,6 +5447,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -5217,6 +5459,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -5228,6 +5471,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -5239,6 +5483,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -5250,6 +5495,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -5261,6 +5507,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -5272,6 +5519,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -5283,6 +5531,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -5294,6 +5543,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -5305,6 +5555,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -5316,6 +5567,7 @@
     {
       "product_row_no": 18,
       "product_name": "Н-75 х 750 - А, В",
+      "profile_width_full_mm": "800",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -5327,6 +5579,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -5338,6 +5591,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -5349,6 +5603,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -5360,6 +5615,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -5371,6 +5627,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -5382,6 +5639,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -5393,6 +5651,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -5404,6 +5663,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -5415,6 +5675,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -5426,6 +5687,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -5437,6 +5699,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -5448,6 +5711,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -5459,6 +5723,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -5470,6 +5735,7 @@
     {
       "product_row_no": 19,
       "product_name": "Н-114 х 600 - А,В",
+      "profile_width_full_mm": "646",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",
@@ -5481,6 +5747,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "VikingMP/COLOR 30",
       "thickness": "0.45",
@@ -5492,6 +5759,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "VikingMP 30",
       "thickness": "0.45",
@@ -5503,6 +5771,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Polyester DS 25/25",
       "thickness": "0.45",
@@ -5514,6 +5783,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.45",
@@ -5525,6 +5795,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Polyester 25",
       "thickness": "0.65",
@@ -5536,6 +5807,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.7",
@@ -5547,6 +5819,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Polyester matte DS",
       "thickness": "0.8",
@@ -5558,6 +5831,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.9",
@@ -5569,6 +5843,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "STANDARD",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "1.0",
@@ -5580,6 +5855,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "ECONOM",
       "coating_type": "Polyester 25",
       "thickness": "0.4",
@@ -5591,6 +5867,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "ECONOM",
       "coating_type": "Polyester/COLOR 25",
       "thickness": "0.4",
@@ -5602,6 +5879,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "ECONOM",
       "coating_type": "Polyester matte DS",
       "thickness": "0.4",
@@ -5613,6 +5891,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "ECONOM",
       "coating_type": "Steelmatt Polyester 25",
       "thickness": "0.4",
@@ -5624,6 +5903,7 @@
     {
       "product_row_no": 20,
       "product_name": "Н-114 х 750 - А,В ***",
+      "profile_width_full_mm": "807",
       "class_name": "RETAIL",
       "coating_type": "ST**",
       "thickness": "ST**",

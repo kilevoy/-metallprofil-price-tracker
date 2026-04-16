@@ -173,6 +173,7 @@ def build_records(rows: list[dict]) -> list[dict]:
                 {
                     "product_row_no": row["row_no"],
                     "product_name": row["product_name"],
+                    "profile_width_full_mm": row["width"],
                     "class_name": price_cell["class_name"],
                     "coating_type": price_cell["coating_type"],
                     "thickness": price_cell["thickness"],
@@ -275,9 +276,16 @@ def build_html(payload: dict) -> str:
     .card {{ margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }}
     .summary {{ padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 14px; background: var(--accent-soft); }}
     .table-wrap {{ overflow: auto; }}
-    table {{ width: 100%; border-collapse: collapse; min-width: 860px; }}
+    table {{ width: 100%; border-collapse: collapse; min-width: 980px; table-layout: fixed; }}
+    col.col-product {{ width: 36%; }}
+    col.col-width {{ width: 13%; }}
+    col.col-coating {{ width: 24%; }}
+    col.col-thickness {{ width: 12%; }}
+    col.col-price {{ width: 15%; }}
     th, td {{ text-align: left; border-bottom: 1px solid var(--line); padding: 10px 12px; vertical-align: top; font-size: 14px; }}
     th {{ position: sticky; top: 0; background: var(--table-head); color: var(--text); text-transform: uppercase; letter-spacing: 0.03em; font-size: 12px; }}
+    td:nth-child(2), td:nth-child(4), th:nth-child(2), th:nth-child(4) {{ text-align: center; }}
+    td:nth-child(2), td:nth-child(4), td:nth-child(5) {{ white-space: nowrap; }}
     .price {{ font-weight: 700; color: var(--accent); white-space: nowrap; }}
     th:last-child, td:last-child {{ text-align: right; }}
     .muted {{ color: var(--muted); }}
@@ -317,9 +325,17 @@ def build_html(payload: dict) -> str:
       <div id="summary" class="summary"></div>
       <div class="table-wrap">
         <table>
+          <colgroup>
+            <col class="col-product">
+            <col class="col-width">
+            <col class="col-coating">
+            <col class="col-thickness">
+            <col class="col-price">
+          </colgroup>
           <thead>
             <tr>
               <th>\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438</th>
+              <th>\u0428\u0438\u0440\u0438\u043d\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u043f\u043e\u043b\u043d\u0430\u044f, \u043c\u043c</th>
               <th>\u0422\u0438\u043f \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u044f</th>
               <th>\u0422\u043e\u043b\u0449\u0438\u043d\u0430</th>
               <th>\u0426\u0435\u043d\u0430, \u0440\u0443\u0431./\u043c.\u043a\u0432.</th>
@@ -444,6 +460,7 @@ def build_html(payload: dict) -> str:
       tbody.innerHTML = sorted.map((row) => `
         <tr>
           <td>${{row.product_name}}</td>
+          <td>${{row.profile_width_full_mm || "-"}}</td>
           <td class="muted">${{row.coating_type}}</td>
           <td>${{row.thickness}}</td>
           <td class="price">${{formatPrice(row.price)}}</td>
